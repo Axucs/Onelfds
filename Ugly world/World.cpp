@@ -5,6 +5,11 @@
 #include "World.h"
 #include "Character.h"
 
+bool Zone::SerializeFromXML(const tinyxml2::XMLElement* node) {
+	//
+	return true;
+}
+
 void Zone::Tick() {
 	//printf("Zone %u\n",ID);
 };

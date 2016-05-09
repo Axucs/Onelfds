@@ -11,6 +11,10 @@
 #include "CChar.h" //классы тем и черт характера
 #include "CharEnums.h"
 
+namespace tinyxml2 {
+	class XMLElement;
+};
+
 enum class Thems {
 	Politics,		 //политика
 	Fauna,			 //фауна
@@ -168,9 +172,8 @@ public:
 		THEMS.insert(std::make_pair(N, X));
 	}
 
-	void Tick() {
-		//printf("Char\n");
-	};
+	bool SerializeFromXML(const tinyxml2::XMLElement* node);
+	void Tick();
 
 };
 

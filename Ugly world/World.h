@@ -7,6 +7,9 @@
 #include <list>
 
 class Character;
+namespace tinyxml2 {
+	class XMLElement;
+};
 
 enum class ZoneId {
 	r1Z1 = 1,          //1 ðåãèîí 1 çîíà
@@ -35,6 +38,7 @@ public:
 	Zone(ZoneId id) {
 		ID = id;
 	}
+	bool SerializeFromXML(const tinyxml2::XMLElement* node);
 	void Tick();
 };
 

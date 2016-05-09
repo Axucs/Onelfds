@@ -15,12 +15,12 @@ World* XML::LoadWorld( const char* fileName) {
 		printf("doc.LoadFile(\"%s\") error\n", fileName);
 		return nullptr;
 	}
-	tinyxml2::XMLElement* rootNode = doc.FirstChildElement();
+	const tinyxml2::XMLElement* rootNode = doc.FirstChildElement();
 	if (!rootNode) {
 		printf("\"%s\" have not root node\n", fileName);
 		return nullptr;
 	}
-	tinyxml2::XMLElement* areaNode = rootNode->FirstChildElement("area");
+	const tinyxml2::XMLElement* areaNode = rootNode->FirstChildElement("area");
 	if (!areaNode) {
 		printf("\"%s\" have not obj node\n", fileName);
 		return nullptr;
@@ -33,7 +33,7 @@ World* XML::LoadWorld( const char* fileName) {
 			return out;
 		}
 		Zone* zone = new Zone(static_cast<ZoneId>(id));
-		//
+		zone->SerializeFromXML(areaNode);
 		out->addZone(zone);
 		areaNode = areaNode->NextSiblingElement("area");
 	}
@@ -46,19 +46,19 @@ bool XML::LoadCharacters( const char* fileName, World* world) {
 		printf("doc.LoadFile(\"%s\") error\n", fileName);
 		return false;
 	}
-	tinyxml2::XMLElement* rootNode = doc.FirstChildElement();
+	const tinyxml2::XMLElement* rootNode = doc.FirstChildElement();
 	if (!rootNode) {
 		printf("\"%s\" have not root node\n", fileName);
 		return false;
 	}
-	tinyxml2::XMLElement* charNode = rootNode->FirstChildElement("character");
+	const tinyxml2::XMLElement* charNode = rootNode->FirstChildElement("character");
 	if (!charNode) {
 		printf("\"%s\" have not obj node\n", fileName);
 		return false;
 	}
 	while (charNode) {
 		Character* chr = new Character;
-		//
+		chr->SerializeFromXML(charNode);
 		world->addCharacter(chr);
 		charNode = charNode->NextSiblingElement("character");
 	}

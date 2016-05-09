@@ -15,7 +15,6 @@ void main() {
 		printf("ERROR: Can't load world\n");
 		return;
 	}
-	std::list<Character*> chars;
 	if (!XML::LoadCharacters("characters.xml", world1)) {
 		printf("ERROR: Can't load chars\n");
 		return;
