@@ -127,11 +127,14 @@
     <ClInclude Include="CChar.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharEnums.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="XMLs.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Char1.cpp" />
-    <ClCompile Include="LoadXMLs.cpp" />
+    <ClCompile Include="XMLs.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="tinyxml2\tinyxml2.vcxproj">

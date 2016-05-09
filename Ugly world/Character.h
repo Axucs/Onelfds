@@ -108,16 +108,13 @@ private:
 	Mental_Fatigue MENTAL_FATIGUE;
 	//Aptitude APTITUDE;
 	std::map<Thems, Them*> THEMS;
-
-
-
-
-
 	
 	//std::map<ZoneId, int> RSs;
 	//std::map<Traits, Trait*> TRAITS;
 
 public:
+	Character() : THEMS() {// default contructor
+	}
 	Character(const char* ID) : THEMS() {
 		NAME;
 		RACE = X;
@@ -168,9 +165,12 @@ public:
 		MENTAL_FATIGUE = X;
 	}
 	void setThems(Thems N, Them* X) {
-		THEMS.insert(std::make_pair(N, X));}
+		THEMS.insert(std::make_pair(N, X));
+	}
 
-
+	void Tick() {
+		//printf("Char\n");
+	};
 
 };
 
