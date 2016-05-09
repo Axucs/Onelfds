@@ -1,12 +1,16 @@
+﻿//----------------------------------------------------------
+// заголовок тут (c)
+//----------------------------------------------------------
+
 #pragma once
+
 enum EStatus {
 	Entrenched,
 	There,
 	None
 };
-class Them
-{
 
+class Them {
 private:
 	int RS;
 public:
@@ -21,11 +25,10 @@ public:
 		if (RS >= min && RS <= max) { RS = RS + Change; }
 		if (RS > max) { RS = max; }
 		if (RS < min) { RS = min; }
-
 	}
 };
-class Trait {
 
+class Trait {
 private:
 	int Growth;
 	int Influence;
