@@ -3,6 +3,9 @@
 //----------------------------------------------------------
 
 #pragma once
+
+#include "CharEnums.h"
+
 class AttribBase {
 protected:
 	int value;

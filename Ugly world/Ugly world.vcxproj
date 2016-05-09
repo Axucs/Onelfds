@@ -71,10 +71,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>bin/</OutDir>
     <TargetName>UglyWorld_debug</TargetName>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);tinyxml2</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>UglyWorld</TargetName>
     <OutDir>bin/</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);tinyxml2</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -128,7 +130,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Char1.cpp" />
+    <ClCompile Include="LoadXMLs.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="tinyxml2\tinyxml2.vcxproj">
+      <Project>{8162fd6e-3eda-4f81-8cd2-3685bd98dbb7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
