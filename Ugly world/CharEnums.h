@@ -9,7 +9,8 @@ enum Race {
 	Human,
 	Orc,
 	Elf,
-	Dwarf
+	Dwarf,
+	X
 };
 
 enum Sex {
