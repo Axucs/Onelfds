@@ -1,5 +1,14 @@
 /Ugly world/x64/Debug
 /Ugly world/tinyxml2/x64/Debug
+/Ugly world/bin/UglyWorld.exe
+/Ugly world/tinyxml2/x64/Release
+/Ugly world/x64/Release
+/Ugly world/bin/UglyWorld_debug.exe
 *.db
 *.suo
 *.opendb
+*.ilk
+*.pdb
+*.iobj
+*.ipdb
+*.user
