@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "CharEnums.h"
+
 class CAttrib_P {
 private: 
 	int value;
@@ -14,7 +16,7 @@ public:
 	int valueChange(int Change) {
 		int min = 15;
 		if (value = empty1) { min = 0;}
-		else if (value)
+//		else if (value)
 
 
 
