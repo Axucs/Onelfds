@@ -1,28 +1,17 @@
 ﻿//----------------------------------------------------------
 // заголовок тут (c)
 //----------------------------------------------------------
-
 #pragma once
 
 #include <string>
 #include <map>
 #include <list>
-#include "CAttrib.h" //êëàññû àòðèáóòîâ
-#include "CChar.h" //êëàññû òåì è ÷åðò õàðàêòåðà
+#include "CAttrib.h" //классы атрибутов
+#include "CChar.h" //классы тем и черт характера
 
 
 
-
-
-
-
-
-
-
-
-
-
-// ëèñò åíóìîâ
+// лист енумов
 enum Race {
 	Human,
 	Orc,
@@ -35,18 +24,18 @@ enum Sex {
 	none
 };
 enum Sociability {
-	adf1,  //Æàæäåò îáùåíèÿ
-	adf2,  //íåîáõîäèìî îáùåíèå
-	adf3,  //ìîæåò îáùàòüñÿ
-	adf4,  //èçáåãàåò îáùåíèÿ
-	adf5  //ìàêñèìàëüíî èçáåãàåò îáùåíèÿ
+	adf1,  //Жаждет общения
+	adf2,  //необходимо общение
+	adf3,  //может общаться
+	adf4,  //избегает общения
+	adf5  //максимально избегает общения
 };
 
 enum Age {
-	ag1,    //"Îòðîê"
-	ag2,    //"Ìîëîäîé"
-	ag3,    //"Âçðîñëûé"
-	ag4    //"Ñòàðèê"
+	ag1,    //"Отрок"
+	ag2,    //"Молодой"
+	ag3,    //"Взрослый"
+	ag4    //"Старик"
 };
 
 enum Neatness {
@@ -54,152 +43,152 @@ enum Neatness {
 };
 
 enum Society_Class {
-	SC1,      //"Ñûðüåâûå"
-	SC2,      //"Ðåìåñëèíèêè"
-	SC3,      //"Äóõîâåíñòâî"
-	SC4,      //"Òîðãîâöû"
-	SC5,      //"Ñòðàæà"
-	SC6,      //"Àðèñòîêðàòû"
-	SC7,      //"Ïðîñâèùåíèå"
-	SC8,      //"Ñáðîä"
-	SC9		  //"Ñêðûòûé"
+	SC1,      //"Сырьевые"
+	SC2,      //"Ремеслиники"
+	SC3,      //"Духовенство"
+	SC4,      //"Торговцы"
+	SC5,      //"Стража"
+	SC6,      //"Аристократы"
+	SC7,      //"Просвищение"
+	SC8,      //"Сброд"
+	SC9		  //"Скрытый"
 };
 enum Attrib_P {
-	Strength,			 //Ñèëà
-	Agility,			 //Ëîâêîñòü
-	Endurance,			 //Âûíîñëèâîñòü
-	empty1,				 //ïóñòîòà 1
+	Strength,			 //Сила
+	Agility,			 //Ловкость
+	Endurance,			 //Выносливость
+	empty1,				 //пустота 1
 };
 enum Attrib_PM {
-	Will,				 //Âîëÿ
-	Perception,			 //Âîñïðèÿòèå
-	Reflex,				 //Ðåôëåêñ
-	dexterity,			 //Ñíîðîâêà
-	empty2,				 //ïóñòîòà 2
+	Will,				 //Воля
+	Perception,			 //Восприятие
+	Reflex,				 //Рефлекс
+	dexterity,			 //Сноровка
+	empty2,				 //пустота 2
 };
 enum Attrib_M {
-	Intellect,			 //Èíòåëåêò
-	Mind,				 //Ðàçóì
-	Logics,				 //Ëîãèêà
-	Charisma,			 //Õàðèçìà
-	Memory,				 //Ïàìÿòü
-	empty3,				 //Ïóñòîòà 3
+	Intellect,			 //Интелект
+	Mind,				 //Разум
+	Logics,				 //Логика
+	Charisma,			 //Харизма
+	Memory,				 //Память
+	empty3,				 //Пустота 3
 };
 enum Mood {
-	m1,    //Îòëè÷íîå
-	m2,    //Õîðîøîå
-	m3,    //×þòü õîðîøîå
-	m4,    //Ñðåäíåå
-	m5,    //×þòü ïëîõîå
-	m6,    //Ïëîõîå
-	m7,    //Óæàñíîå
+	m1,    //Отличное
+	m2,    //Хорошое
+	m3,    //Чють хорошое
+	m4,    //Среднее
+	m5,    //Чють плохое
+	m6,    //Плохое
+	m7,    //Ужасное
 };
 enum Physical_Fatigue {
-	pf1,	 //àáñîëþòíî áîäðûé
-	pf2,	 //Áîäðûé
-	pf3,	 //×þòü áîäðû
-	pf4,	 //Ñðåäíèé
-	pf5,	 //×þòü óñòàâøèé
-	pf6,	 //Óñòàâøèé
-	pf7,	 //Ì¸ðòâûé
+	pf1,	 //абсолютно бодрый
+	pf2,	 //Бодрый
+	pf3,	 //Чють бодры
+	pf4,	 //Средний
+	pf5,	 //Чють уставший
+	pf6,	 //Уставший
+	pf7,	 //Мёртвый
 };
 enum Mental_Fatigue {
-	mf1,	 //àáñîëþòíî áîäðûé
-	mf2,	 //Áîäðûé
-	mf3,	 //×þòü áîäðû
-	mf4,	 //Ñðåäíèé
-	mf5,	 //×þòü óñòàâøèé
-	mf6,	 //Óñòàâøèé
-	mf7,	 //Ì¸ðòâûé
+	mf1,	 //абсолютно бодрый
+	mf2,	 //Бодрый
+	mf3,	 //Чють бодры
+	mf4,	 //Средний
+	mf5,	 //Чють уставший
+	mf6,	 //Уставший
+	mf7,	 //Мёртвый
 };
 enum class Main_task {
-	mat1,    //ñâîáîäåí
-	mat2,    //ïðàêòè÷åñêè ñâîáîäåí
-	mat3,    //ïðàêòè÷åñêè çàíÿò
-	mat4,    //ñðåäíå çàíÿò
-	mat5,    //ñèëüíî çàíÿò
-	mat6     //Î÷åíü ñèëüíî çàíÿò
+	mat1,    //свободен
+	mat2,    //практически свободен
+	mat3,    //практически занят
+	mat4,    //средне занят
+	mat5,    //сильно занят
+	mat6     //Очень сильно занят
 };
 enum class Moment_task {
-	mot1,   //ñâîáîäåí
-	mot2,   //ïðàêòè÷åñêè ñâîáîäå
-	mot3,   //ïðàêòè÷åñêè çàíÿò
-	mot4,   //ñðåäíå çàíÿò
-	mot5,   //ñèëüíî çàíÿò
-	mot6    //Î÷åíü ñèëüíî çàíÿò
+	mot1,   //свободен
+	mot2,   //практически свободе
+	mot3,   //практически занят
+	mot4,   //средне занят
+	mot5,   //сильно занят
+	mot6    //Очень сильно занят
 };
 
 enum Skills {
 	Craft,
-};					
+};
 
 enum class Thems {
-	Politics,		 //ïîëèòèêà
-	Fauna,			 //ôàóíà
-	History,		 //Èñòîðèÿ
-	Architecture,	 //Àðõèòåêòóðà
-	Handicraft,		 //êðàâò, ïðîèçâîäñòâî ÷åãî ëèîáî
-	Medicine,		 //Ìåäåöûíà
-	Theology,		 //Òèàëîãèÿ
-	Weather,		 //êëèìàò, ïîãîäà
-	Society,		 //Îáùåñòâî 
-	Warfare,		 //Âîéíà
-	Economy,		 //Ýêîíîìèêà
-	Flora,			 //Ôëîðà
-	Entertainmen,	 //Ðàçâëå÷åíèå
-	Culture,		 //Êóëüòóðà
-	Law,			 //Çàêîíû, ïîðÿäêè
-	Family,			 //Ñåìÿ 
-	Rumors,			 //ñëóõè 
-	News			 //Íîâîñòè
+	Politics,		 //политика
+	Fauna,			 //фауна
+	History,		 //История
+	Architecture,	 //Архитектура
+	Handicraft,		 //кравт, производство чего лиобо
+	Medicine,		 //Медецына
+	Theology,		 //Тиалогия
+	Weather,		 //климат, погода
+	Society,		 //Общество 
+	Warfare,		 //Война
+	Economy,		 //Экономика
+	Flora,			 //Флора
+	Entertainmen,	 //Развлечение
+	Culture,		 //Культура
+	Law,			 //Законы, порядки
+	Family,			 //Семя 
+	Rumors,			 //слухи 
+	News			 //Новости
 };
 enum class Traits {
-	Honest,//×åñòíûé
-	Deceptive,//Ëæèâûé
-	Generous,//Ùåäðûé
-	Greedy,//Æàäíûé
-	Lonely,//Îäèíîêèé
-	Sociable,//Îáùèòåëüíûé
-	Gambler,//Àçàðòíûé
-	cold_blooded,//Õëàäíîêðîâíûé
-	Responsible,//Îòâåòñòâåííûé
-	Irresponsible,//Áåçîòâåòñòâåííûé
-	Attentive,//Âíèìàòåëüíûé
-	Absentminded,//ðàññåÿííûé
-	Careful,//Àêêóðàòíûé
-	sloppy,//Íåðÿøëèâûé
-	Delicate,//Äåëèêàòíûé
-	Rough,//Ãðóáûé
-	Conceited,//Òùåñëàâíûé
-	Self_sufficient,//Ñàìîäîñòàòî÷íûé
-	Rasper,//Ðåçêèé
-	Flexible,//Ãèáêèé
-	Farsighted,//Äàëüíîâèäíûé
-	Myopic,//Áëèçîðóêèé
-	Endurant,//Òåðïåëèâûé
-	Individualist,//Èíäèâèäóàëèñò
-	Collectivist,//Êîëëåêòèâèñò
-	Cynical,//Öèíè÷íûé
-	Sentimental,//Ñåíòèìåíòàëüíûé
-	Cunning,//Õèòðûé
-	Guileless,//Ïðîñòîäóøíûé
-	Calm,//Ñïîêîéíûé
-	Dynamic,//Äèíàìè÷íûé
-	Ambitious,//Öåëåóñòðåìëåííûé
-	Frivolous,//Ëåãêîìûñëåííûé
-	Unpredictable,//Íåïðåäñêàçóåìûé
-	Stable,//Ñòàáèëüíûé
-	Unstable,//Íåïîñòîÿííûé
-	Proud,//Ãîðäûé
-	Humble,//Ñìèðåííûé
-	Demanding,//Òðåáîâàòåëüíûé
-	Witty,//Îñòðîóìíûé
-	Melancholy,//Ìåëàíõîëè÷íûé
-	dedicated,//Ïðåäàííûé
-	Independent,//Íåçàâèñèìûé
-	Opinionated,//Óïðÿìûé
-	Diplomatic,//Äèïëîìàòè÷íûé
-	conflicting    	//Êîíôëèêòíûé
+	Honest,//Честный
+	Deceptive,//Лживый
+	Generous,//Щедрый
+	Greedy,//Жадный
+	Lonely,//Одинокий
+	Sociable,//Общительный
+	Gambler,//Азартный
+	cold_blooded,//Хладнокровный
+	Responsible,//Ответственный
+	Irresponsible,//Безответственный
+	Attentive,//Внимательный
+	Absentminded,//рассеянный
+	Careful,//Аккуратный
+	sloppy,//Неряшливый
+	Delicate,//Деликатный
+	Rough,//Грубый
+	Conceited,//Тщеславный
+	Self_sufficient,//Самодостаточный
+	Rasper,//Резкий
+	Flexible,//Гибкий
+	Farsighted,//Дальновидный
+	Myopic,//Близорукий
+	Endurant,//Терпеливый
+	Individualist,//Индивидуалист
+	Collectivist,//Коллективист
+	Cynical,//Циничный
+	Sentimental,//Сентиментальный
+	Cunning,//Хитрый
+	Guileless,//Простодушный
+	Calm,//Спокойный
+	Dynamic,//Динамичный
+	Ambitious,//Целеустремленный
+	Frivolous,//Легкомысленный
+	Unpredictable,//Непредсказуемый
+	Stable,//Стабильный
+	Unstable,//Непостоянный
+	Proud,//Гордый
+	Humble,//Смиренный
+	Demanding,//Требовательный
+	Witty,//Остроумный
+	Melancholy,//Меланхоличный
+	dedicated,//Преданный
+	Independent,//Независимый
+	Opinionated,//Упрямый
+	Diplomatic,//Дипломатичный
+	conflicting    	//Конфликтный
 };
 //
 
@@ -220,7 +209,7 @@ private:
 	//Status STATUS;
 	//kin list
 	Skills SKILLS;
-	std::map<Attrib_P,  CAttrib_P>  ATTRIB_P;
+	std::map<Attrib_P, CAttrib_P>  ATTRIB_P;
 	std::map<Attrib_PM, CAttrib_PM> ATTRIB_PM;
 	std::map<Attrib_PM, CAttrib_PM> ATTRIB_M;
 	//Knowledge KNOWLEDGE;
@@ -240,48 +229,49 @@ private:
 
 public:
 	Character();
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	~Character();
 };
+
 

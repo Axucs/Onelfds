@@ -2,3 +2,4 @@
 /Ugly world/tinyxml2/x64/Debug
 *.db
 *.suo
+*.opendb
