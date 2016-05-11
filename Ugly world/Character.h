@@ -46,6 +46,7 @@ private:
 public:
 	Character();
 	void setName(const char* X);
+	void setRace(const Race x);
 	void setAge(int X);
 	void setSex(Sex X);
 	void setSociability(int X);

@@ -2,6 +2,8 @@
 // заголовок тут (c)
 //----------------------------------------------------------
 
+#include <string>
+#include <tinyxml2.h>
 #include "Character.h"
 
 //----------------------------------------------------------
@@ -10,7 +12,7 @@ Character::Character() :
 	NAME(),
 	RACE(Human),
 	AGE(ag1),
-	SEX(none),
+	SEX(Male),
 	SOCIABILITY(adf1),
 	NEATNESS(test),
 	SOCIETY_CLASS(SC8),
@@ -25,6 +27,10 @@ Character::Character() :
 //----------------------------------------------------------
 void Character::setName(const char* X) {
 	NAME = X;
+}
+//----------------------------------------------------------
+void Character::setRace(const Race x) {
+	RACE = x;
 }
 //----------------------------------------------------------
 void Character::setAge(int X) {
@@ -74,8 +80,24 @@ void Character::setThems(Thems N, Them* X) {
 	THEMS.insert(std::make_pair(N, X));
 }
 //----------------------------------------------------------
-bool Character::SerializeFromXML(const tinyxml2::XMLElement * node) {
+bool Character::SerializeFromXML(const tinyxml2::XMLElement* node) {
+	//---------------------------
+	const tinyxml2::XMLAttribute* nameAtt = node->FindAttribute("name");
+	if (nameAtt) {
+		setName(nameAtt->Value());
+	}
+	//---------------------------
+	const tinyxml2::XMLAttribute* raceAtt = node->FindAttribute("race");
+	if (raceAtt) {
+		std::string raceStr = raceAtt->Value();
+		if (raceStr == "Human") setRace(Human);
+		else if (raceStr == "Orc") setRace(Orc);
+		else if (raceStr == "Elf") setRace(Elf);
+		else if (raceStr == "Dwarf") setRace(Dwarf);
+	}
+	//---------------------------
 	//
+	//---------------------------
 	return true;
 }
 //----------------------------------------------------------

@@ -9,14 +9,12 @@ enum Race {
 	Human,
 	Orc,
 	Elf,
-	Dwarf,
-	X
+	Dwarf
 };
 //----------------------------------------------------------
 enum Sex {
 	Male,
-	Female,
-	none
+	Female
 };
 //----------------------------------------------------------
 enum Sociability {
