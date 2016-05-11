@@ -4,50 +4,50 @@
              neatness="" society_class="SC5" faction="" main_task="mat1"
              moment_task="mot1" status="" p_fatigue="pf1" m_fatigue="mf1"
              mood="m1" >
-    <attrib_p>  str="43" agi="32" end="15" emp="60"</attrib_p>
-    <attrib_pm> wil="100" per="15" ref="23" dex="32" emp="30" </attrib_pm>
-    <attrib_m>  int="100" min="100" log="15" cha="15" mem="15" emp="5" </attrib_m>
+    <attrib_p  str="43" agi="32" end="15" emp="60"></attrib_p>
+    <attrib_pm wil="100" per="15" ref="23" dex="32" emp="30" ></attrib_pm>
+    <attrib_m  int="100" min="100" log="15" cha="15" mem="15" emp="5" ></attrib_m>
     <skills></skills>
     <aptitude></aptitude>
     <knowledge>
-      Politics          м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Fauna             м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      History           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Architecture      м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Handicraft        м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Medicine          м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Theology          м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Weather           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Society           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Warfare           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Economy           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Flora             м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Entertainmen      м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Culture           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Law               м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Family            м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Rumors            м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      News              м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
+     <Politics          м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Politics    >
+     <Fauna             м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Fauna       >
+     <History           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></History     >
+     <Architecture      м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Architecture>
+     <Handicraft        м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Handicraft  >
+     <Medicine          м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Medicine    >
+     <Theology          м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Theology    >
+     <Weather           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Weather     >
+     <Society           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Society     >
+     <Warfare           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Warfare     >
+     <Economy           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Economy     >
+     <Flora             м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Flora       >
+     <Entertainmen      м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Entertainmen>
+     <Culture           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Culture     >
+     <Law               м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Law         >
+     <Family            м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Family      >
+     <Rumors            м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Rumors      >
+     <News              м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></News        >
     </knowledge>
     <them>
-      Politics           = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Fauna              = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      History            = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Architecture       = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Handicraft         = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Medicine           = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Theology           = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Weather            = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Society            = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Warfare            = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Economy            = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Flora              = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Entertainmen       = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Culture            = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Law                = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Family             = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      Rumors             = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
-      News               = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0"
+      <Politics         rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Politics    >
+      <Fauna            rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Fauna       >
+      <History          rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></History     >
+      <Architecture     rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Architecture>
+      <Handicraft       rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Handicraft  >
+      <Medicine         rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Medicine    >
+      <Theology         rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Theology    >
+      <Weather          rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Weather     >
+      <Society          rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Society     >
+      <Warfare          rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Warfare     >
+      <Economy          rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Economy     >
+      <Flora            rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Flora       >
+      <Entertainmen     rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Entertainmen>
+      <Culture          rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Culture     >
+      <Law              rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Law         >
+      <Family           rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Family      >
+      <Rumors           rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></Rumors      >
+      <News             rs = "3"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" ></News        >
     </them>
     <trait>
       Honest			          gro="4" inf="0" sta="none"
