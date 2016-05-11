@@ -142,6 +142,12 @@
       <Project>{8162fd6e-3eda-4f81-8cd2-3685bd98dbb7}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="bin\characters.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="bin\world.xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
