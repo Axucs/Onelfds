@@ -113,7 +113,22 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node) {
 		else if (raceStr == "Dwarf") setRace(Dwarf);
 	}
 	//---------------------------
-	//
+	const tinyxml2::XMLAttribute* ageAtt = node->FindAttribute("age");
+	if (ageAtt) {
+		setAge(ageAtt->IntValue());
+	}
+	//---------------------------
+	const tinyxml2::XMLAttribute* sexAtt = node->FindAttribute("sex");
+	if (sexAtt) {
+		std::string sexStr = sexAtt->Value();
+		if (sexStr == "Male") setSex(Male);
+		else if (sexStr == "Female") setSex(Female);
+	}
+	//---------------------------
+	const tinyxml2::XMLAttribute* socialAtt = node->FindAttribute("social");
+	if (socialAtt) {
+		setSociability(socialAtt->IntValue());
+	}
 	//---------------------------
 	return true;
 }
