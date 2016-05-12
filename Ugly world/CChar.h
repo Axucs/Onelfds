@@ -58,3 +58,12 @@ public:
 		else if (Growth < 0) { InfluenceChange(-1), Growth = 10; }
 	};
 };
+
+class CW_V {
+private:
+	int View;
+public: 
+	CW_V(int X) {
+		View = X;
+	};
+};

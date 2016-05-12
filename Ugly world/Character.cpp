@@ -16,6 +16,7 @@ Character::Character() :
 	SOCIABILITY(adf1),
 	NEATNESS(test),
 	SOCIETY_CLASS(SC8),
+	WORLD_VIEW(World_view::cre_des),
 	MAIN_TASK(Main_task::mat6),
 	MOMENT_TASK(Moment_task::mot6),
 	MOOD(m1),
@@ -29,8 +30,8 @@ void Character::setName(const char* X) {
 	NAME = X;
 }
 //----------------------------------------------------------
-void Character::setRace(const Race x) {
-	RACE = x;
+void Character::setRace(const Race X) {
+	RACE = X;
 }
 //----------------------------------------------------------
 void Character::setAge(int X) {
@@ -60,12 +61,28 @@ void Character::setSociety_class(Society_Class X) {
 	SOCIETY_CLASS = X;
 }
 //----------------------------------------------------------
+void Character::setWorld_view(World_view X) {
+	std::list<World_view, CW_V> = X;
+}
+//----------------------------------------------------------
 void Character::setMain_task(Main_task X) {
 	MAIN_TASK = X;
 }
 //----------------------------------------------------------
 void Character::setMoment_task(Moment_task X) {
 	MOMENT_TASK = X;
+}
+//----------------------------------------------------------
+void Character::setAttrib_P(Attrib_P X) {
+	std::list<Attrib_P, CAttrib_P> = X;
+}
+//----------------------------------------------------------
+void Character::setAttrib_PM(Attrib_PM X) {
+	std::list<Attrib_PM, CAttrib_PM> = X;
+}
+//----------------------------------------------------------
+void Character::setAttrib_M(Attrib_M X) {
+	std::list<Attrib_PM, CAttrib_PM> = X;
 }
 //----------------------------------------------------------
 void Character::setPF(Physical_Fatigue X) {

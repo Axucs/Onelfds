@@ -48,14 +48,20 @@ enum Society_Class {
 	SC9		  //"Скрытый"
 };
 //----------------------------------------------------------
-enum Attrib_P {
+enum class World_view {
+	cre_des,
+	mat_men,
+	simp_exp
+};
+//----------------------------------------------------------
+enum class Attrib_P {
 	Strength,			 //Сила
 	Agility,			 //Ловкость
 	Endurance,			 //Выносливость
 	empty1,				 //пустота 1
 };
 //----------------------------------------------------------
-enum Attrib_PM {
+enum class Attrib_PM {
 	Will,				 //Воля
 	Perception,			 //Восприятие
 	Reflex,				 //Рефлекс
@@ -63,7 +69,7 @@ enum Attrib_PM {
 	empty2,				 //пустота 2
 };
 //----------------------------------------------------------
-enum Attrib_M {
+enum class Attrib_M {
 	Intellect,			 //Интелект
 	Mind,				 //Разум
 	Logics,				 //Логика
