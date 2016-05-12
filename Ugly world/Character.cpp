@@ -19,6 +19,9 @@ Character::Character() :
 	//WORLD_VIEW(World_view::cre_des),
 	MAIN_TASK(Main_task::mat6),
 	MOMENT_TASK(Moment_task::mot6),
+	ATTRIB_P(4, eAttrib::Strength, eAttrib::Agility, eAttrib::Endurance, eAttrib::Empty),
+	ATTRIB_PM(5, eAttrib::Will, eAttrib::Perception, eAttrib::Reflex, eAttrib::Dexterity, eAttrib::Empty),
+	ATTRIB_M(6, eAttrib::Intellect, eAttrib::Mind, eAttrib::Logics, eAttrib::Charisma, eAttrib::Memory, eAttrib::Empty),
 	MOOD(m1),
 	PHYSICAL_FATIGUE(pf1),
 	MENTAL_FATIGUE(mf1),
@@ -73,16 +76,25 @@ void Character::setMoment_task(Moment_task X) {
 	MOMENT_TASK = X;
 }
 //----------------------------------------------------------
-void Character::setAttrib_P(Attrib_P X) {
-	//std::list<Attrib_P, CAttrib_P> = X;
+void Character::setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3) {
+	ATTRIB_P[0] = x0;
+	ATTRIB_P[1] = x1;
+	ATTRIB_P[2] = x2;
+	ATTRIB_P[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setAttrib_PM(Attrib_PM X) {
-	//std::list<Attrib_PM, CAttrib_PM> = X;
+void Character::setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3) {
+	ATTRIB_PM[0] = x0;
+	ATTRIB_PM[1] = x1;
+	ATTRIB_PM[2] = x2;
+	ATTRIB_PM[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setAttrib_M(Attrib_M X) {
-	//std::list<Attrib_PM, CAttrib_PM> = X;
+void Character::setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3) {
+	ATTRIB_M[0] = x0;
+	ATTRIB_M[1] = x1;
+	ATTRIB_M[2] = x2;
+	ATTRIB_M[3] = x3;
 }
 //----------------------------------------------------------
 void Character::setPF(Physical_Fatigue X) {

@@ -4,48 +4,50 @@
 
 #pragma once
 
+#include <stdarg.h>
+
 #include "CharEnums.h"
 
-class AttribBase {
-protected:
-	int value;
-public:
+//----------------------------------------------------------
+enum class eAttrib {
+	Empty,				 //пустота
+	//---------------------
+	Strength,			 //Сила
+	Agility,			 //Ловкость
+	Endurance,			 //Выносливость
+	//---------------------
+	Will,				 //Воля
+	Perception,			 //Восприятие
+	Reflex,				 //Рефлекс
+	Dexterity,			 //Сноровка
+	//---------------------
+	Intellect,			 //Интелект
+	Mind,				 //Разум
+	Logics,				 //Логика
+	Charisma,			 //Харизма
+	Memory				 //Память
 };
-class CAttrib_P : public AttribBase {
-private: 
-	Attrib_P type;
-public:
-	CAttrib_P(Attrib_P T, int X) {
-		value = X;
-		type = T;
-	}
-	int valueChange(int Change) {
-		int min = 15;
-		//if (type == empty1) { min = 0;}
-		if (value <= min) { value = min; }
-		if (value >= min) { value = value + Change; }
-		//if (type == Strength, value >= 50) { Attrib_P::Endurance, Attrib_P::Agility; }
-		//if (type == Agility, value >= 50) { Attrib_P::Strength, Attrib_P::Endurance; }
-		//if (type == Endurance, value >= 50) { Attrib_P::Agility, Attrib_P::Strength; }
-	}
-
-
-};
-class CAttrib_PM : public AttribBase {
+//----------------------------------------------------------
+// этот класс хранит нужное количество атрибутов одного круга
+class MAttrib {
 private:
-	Attrib_PM type;
+	static const int MAX_NUMBER = 10;
+	eAttrib          types[MAX_NUMBER];		// тут типы атрибутов, количество с большим запасом
+	unsigned int     values[MAX_NUMBER];	// тут значения атрибутов, количество с большим запасом
+	unsigned int     number;				// а это реальное количество атрибутов
 public:
-	CAttrib_PM(Attrib_PM T, int X) {
-		value = X;
-		type = T;
+	MAttrib(unsigned int n, eAttrib t,...) {
+		number = n;
+		va_list ap;
+		va_start(ap, n);
+		for (unsigned int  j = 0; j < number; j++) {
+			types[j] = va_arg(ap, eAttrib);
+			values[j] = 0;
+		}
+		va_end(ap);
+	};
+	unsigned int& operator[](int n) {
+		return values[n];
 	}
 };
-class CAttrib_M : public AttribBase {
-private:
-	Attrib_M type;
-public:
-	CAttrib_M(Attrib_M T, int X) {
-		value = X;
-		type = T;
-	}
-};
+//----------------------------------------------------------

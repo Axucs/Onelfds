@@ -54,30 +54,6 @@ enum class World_view {
 	simp_exp	//self_improvement-exploitation
 };
 //----------------------------------------------------------
-enum class Attrib_P {
-	Strength,			 //Сила
-	Agility,			 //Ловкость
-	Endurance,			 //Выносливость
-	empty1,				 //пустота 1
-};
-//----------------------------------------------------------
-enum class Attrib_PM {
-	Will,				 //Воля
-	Perception,			 //Восприятие
-	Reflex,				 //Рефлекс
-	dexterity,			 //Сноровка
-	empty2,				 //пустота 2
-};
-//----------------------------------------------------------
-enum class Attrib_M {
-	Intellect,			 //Интелект
-	Mind,				 //Разум
-	Logics,				 //Логика
-	Charisma,			 //Харизма
-	Memory,				 //Память
-	empty3,				 //Пустота 3
-};
-//----------------------------------------------------------
 enum Mood {
 	m1,    //Отличное
 	m2,    //Хорошое
