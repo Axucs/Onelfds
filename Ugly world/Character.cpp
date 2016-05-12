@@ -16,7 +16,7 @@ Character::Character() :
 	SOCIABILITY(adf1),
 	NEATNESS(test),
 	SOCIETY_CLASS(SC8),
-	WORLD_VIEW(World_view::cre_des),
+	//WORLD_VIEW(World_view::cre_des),
 	MAIN_TASK(Main_task::mat6),
 	MOMENT_TASK(Moment_task::mot6),
 	MOOD(m1),
@@ -62,7 +62,7 @@ void Character::setSociety_class(Society_Class X) {
 }
 //----------------------------------------------------------
 void Character::setWorld_view(World_view X) {
-	std::list<World_view, CW_V> = X;
+	//std::list<World_view, CW_V> = X;
 }
 //----------------------------------------------------------
 void Character::setMain_task(Main_task X) {
@@ -74,15 +74,15 @@ void Character::setMoment_task(Moment_task X) {
 }
 //----------------------------------------------------------
 void Character::setAttrib_P(Attrib_P X) {
-	std::list<Attrib_P, CAttrib_P> = X;
+	//std::list<Attrib_P, CAttrib_P> = X;
 }
 //----------------------------------------------------------
 void Character::setAttrib_PM(Attrib_PM X) {
-	std::list<Attrib_PM, CAttrib_PM> = X;
+	//std::list<Attrib_PM, CAttrib_PM> = X;
 }
 //----------------------------------------------------------
 void Character::setAttrib_M(Attrib_M X) {
-	std::list<Attrib_PM, CAttrib_PM> = X;
+	//std::list<Attrib_PM, CAttrib_PM> = X;
 }
 //----------------------------------------------------------
 void Character::setPF(Physical_Fatigue X) {

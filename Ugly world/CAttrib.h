@@ -21,7 +21,7 @@ public:
 	}
 	int valueChange(int Change) {
 		int min = 15;
-		if (type == empty1) { min = 0;}
+		//if (type == empty1) { min = 0;}
 		if (value <= min) { value = min; }
 		if (value >= min) { value = value + Change; }
 		//if (type == Strength, value >= 50) { Attrib_P::Endurance, Attrib_P::Agility; }

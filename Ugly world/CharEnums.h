@@ -49,9 +49,9 @@ enum Society_Class {
 };
 //----------------------------------------------------------
 enum class World_view {
-	cre_des,
-	mat_men,
-	simp_exp
+	cre_des,	//creation-destruction
+	mat_men,	//material-mental
+	simp_exp	//self_improvement-exploitation
 };
 //----------------------------------------------------------
 enum class Attrib_P {

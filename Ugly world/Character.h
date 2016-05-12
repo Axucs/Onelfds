@@ -32,11 +32,11 @@ private:
 	//Status						STATUS;
 	//kin list
 	//std::map<Skills,CSlills>		SKILLS;
-	std::list<Attrib_P,CAttrib_P>	ATTRIB_P;
-	std::list<Attrib_PM,CAttrib_PM>	ATTRIB_PM;
-	std::list<Attrib_PM,CAttrib_PM>	ATTRIB_M;
+	//std::list<Attrib_P,CAttrib_P>	ATTRIB_P;
+	//std::list<Attrib_PM,CAttrib_PM>	ATTRIB_PM;
+	//std::list<Attrib_PM,CAttrib_PM>	ATTRIB_M;
 	//Knowledge						KNOWLEDGE;
-	std::list<World_view, CW_V>		WORLD_VIEW;
+	//std::list<World_view, CW_V>		WORLD_VIEW;
 	Mood							MOOD;
 	Physical_Fatigue				PHYSICAL_FATIGUE;
 	Mental_Fatigue					MENTAL_FATIGUE;
@@ -57,8 +57,8 @@ public:
 	void setMain_task(Main_task X);
 	void setMoment_task(Moment_task X);
 	void setAttrib_P(Attrib_P X);
-	void setAttrib_PM(CAttrib_PM X);
-	void setAttrib_PM(CAttrib_PM X);
+	void setAttrib_PM(Attrib_PM X);
+	void setAttrib_M(Attrib_M X);
 	void setPF(Physical_Fatigue X);
 	void setMF(Mental_Fatigue X);
 	void setThems(Thems N, Them* X);
