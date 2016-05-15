@@ -142,6 +142,29 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node) {
 		setSociability(socialAtt->IntValue());
 	}
 	//---------------------------
+	//neatness = "" society_class = "SC5" faction = "" main_task = "mat1"
+	//moment_task = "mot1" status = "" p_fatigue = "pf1" m_fatigue = "mf1"
+	//mood = "m1" >
+	//---------------------------
+	const tinyxml2::XMLElement* att_p_Node = node->FirstChildElement("attrib_p");
+	if (att_p_Node) {
+		if (!ATTRIB_P.SerializeFromXML(att_p_Node)) {
+			printf("ERROR: Problems in attrin_p");
+		}
+	}
+	const tinyxml2::XMLElement* att_pm_Node = node->FirstChildElement("attrib_pm");
+	if (att_pm_Node) {
+		if (!ATTRIB_PM.SerializeFromXML(att_pm_Node)) {
+			printf("ERROR: Problems in attrin_pm");
+		}
+	}
+	const tinyxml2::XMLElement* att_m_Node = node->FirstChildElement("attrib_m");
+	if (att_m_Node) {
+		if (!ATTRIB_M.SerializeFromXML(att_m_Node)) {
+			printf("ERROR: Problems in attrin_m");
+		}
+	}
+	//---------------------------
 	return true;
 }
 //----------------------------------------------------------

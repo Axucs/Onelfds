@@ -131,6 +131,7 @@
     <ClInclude Include="XMLs.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CAttrib.cpp" />
     <ClCompile Include="Char1.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="XMLs.cpp" />
