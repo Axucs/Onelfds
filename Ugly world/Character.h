@@ -21,11 +21,11 @@ private:
 	int								CharID;
 	std::string						NAME;
 	Race							RACE;
-	Age								AGE;
+	int								AGE;
 	Sex								SEX;
 	Sociability						SOCIABILITY;
 	Neatness						NEATNESS;
-	Society_Class					SOCIETY_CLASS;
+	SocietyClass					SOCIETY_CLASS;
 	//Faction
 	Main_task						MAIN_TASK;
 	Moment_task						MOMENT_TASK;
@@ -46,22 +46,22 @@ private:
 	//std::map<Traits,Trait*>		TRAITS;
 public:
 	Character();
-	void setName(const char* X);
-	void setAge(int X);
-	void setSex(Sex X);
-	void setRace(Race X);
-	void setSociability(int X);
-	void setNeatness(int X);
-	void setSociety_class(Society_Class X);
-	void setWorld_view(World_view X);
-	void setMain_task(Main_task X);
-	void setMoment_task(Moment_task X);
+	void setName(const char* x);
+	void setAge(const int x);
+	void setSex(const Sex x);
+	void setRace(const Race x);
+	void setSociability(const int x);
+	void setNeatness(const Neatness x);
+	void setSociety_class(const SocietyClass x);
+	void setWorld_view(const World_view x);
+	void setMain_task(const Main_task x);
+	void setMoment_task(const Moment_task x);
 	void setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
-	void setPF(Physical_Fatigue X);
-	void setMF(Mental_Fatigue X);
-	void setThems(Thems N, Them* X);
+	void setPF(Physical_Fatigue x);
+	void setMF(Mental_Fatigue x);
+	void setThems(Thems n, Them* x);
 
 	bool SerializeFromXML(const tinyxml2::XMLElement* node);
 	void Tick();
