@@ -11,12 +11,14 @@
 #include "CChar.h"		//классы тем и черт характера
 #include "CharEnums.h"
 
-namespace tinyxml2 {
+namespace tinyxml2
+{
 	class XMLElement;// это сделано что бы не делать #include <tinyxml2.h> сюда.
 };
 
 //----------------------------------------------------------
-class Character {
+class Character
+{
 private:
 	int								CharID;
 	std::string						NAME;
@@ -36,13 +38,13 @@ private:
 	MAttrib							ATTRIB_PM;
 	MAttrib							ATTRIB_M;
 	//Knowledge						KNOWLEDGE;
-	//std::list<World_view, CW_V>		WORLD_VIEW;
+	//std::list<World_view, CW_V>	WORLD_VIEW;
 	Mood							MOOD;
 	Physical_Fatigue				PHYSICAL_FATIGUE;
 	Mental_Fatigue					MENTAL_FATIGUE;
 	//Aptitude						APTITUDE;
 	std::map<Thems,Them*>			THEMS;
-	//std::map<ZoneId,int>			RSs;
+	//std::map<AreaId,int>			RSs;
 	//std::map<Traits,Trait*>		TRAITS;
 public:
 	Character();

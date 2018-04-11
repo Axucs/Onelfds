@@ -6,45 +6,43 @@
 #include "Character.h"
 
 //----------------------------------------------------------
-Zone::Zone(ZoneId id) {
+Area::Area(AreaId id)
+{
 	ID = id;
 }
 //----------------------------------------------------------
-bool Zone::SerializeFromXML(const tinyxml2::XMLElement* node) {
+bool Area::SerializeFromXML(const tinyxml2::XMLElement* node)
+{
 	//
 	return true;
 }
 //----------------------------------------------------------
-void Zone::Tick() {
-	//printf("Zone %u\n",ID);
+void Area::Tick()
+{
+	//printf("Area %u\n",ID);
 };
 //----------------------------------------------------------
-World::World() : Zones(), Characters() {
+World::World() : Areas(), Characters()
+{
 }
 //----------------------------------------------------------
 void World::Tick() {
-	for (auto zone : Zones) {
-		zone->Tick();
+	for (auto area : Areas)
+	{
+		area->Tick();
 	};
-	for (auto C : Characters) {
-		C->Tick();
+	for (auto character : Characters)
+	{
+		character->Tick();
 	};
 }
 //----------------------------------------------------------
-void World::addZone(Zone* X) {
-	Zones.push_back(X);
+void World::addArea(Area* X)
+{
+	Areas.push_back(X);
 }
 //----------------------------------------------------------
 void World::addCharacter(Character* X) {
 	Characters.push_back(X);
 }
 //----------------------------------------------------------
-
-
-
-
-
-
-
-
-

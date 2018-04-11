@@ -7,12 +7,14 @@
 #include <list>
 
 class Character;
-namespace tinyxml2 {
+namespace tinyxml2
+{
 	class XMLElement;
 };
 
 //----------------------------------------------------------
-enum class ZoneId {
+enum class AreaId
+{
 	r1Z1 = 1,
 	r1Z2,
 	r1Z3,
@@ -31,22 +33,24 @@ enum class ZoneId {
 	r4Z4
 };
 //----------------------------------------------------------
-class Zone {
+class Area
+{
 private:
-	ZoneId ID;
+	AreaId ID;
 public:
-	Zone(ZoneId id);
+	Area(AreaId id);
 	bool SerializeFromXML(const tinyxml2::XMLElement* node);
 	void Tick();
 };
 //----------------------------------------------------------
-class World {
+class World
+{
 private:
-	std::list<Zone*> Zones;
+	std::list<Area*> Areas;
 	std::list<Character*> Characters;
 public:
 	World();
-	void addZone(Zone* X);
+	void addArea(Area* X);
 	void addCharacter(Character* X);
 	void Tick();
 };

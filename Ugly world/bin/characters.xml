@@ -103,7 +103,7 @@
       <trait type="Conflicting"    	      gro="4" inf="0" sta="none" />
     </traits>
   </character> 
-    <character name="Anton" />
-    <character name="Babay" />
-    <character name="Wad" />
+  <character name="Anton" />
+  <character name="Babay" />
+  <character name="Wad" />
 </characters>

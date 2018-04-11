@@ -29,23 +29,28 @@ Character::Character() :
 {
 }
 //----------------------------------------------------------
-void Character::setName(const char* x) {
+void Character::setName(const char* x)
+{
 	NAME = x;
 }
 //----------------------------------------------------------
-void Character::setRace(const Race x) {
+void Character::setRace(const Race x)
+{
 	RACE = x;
 }
 //----------------------------------------------------------
-void Character::setAge(int x) {
+void Character::setAge(int x)
+{
 	AGE = x;
 }
 //----------------------------------------------------------
-void Character::setSex(Sex x) {
+void Character::setSex(Sex x)
+{
 	SEX = x;
 }
 //----------------------------------------------------------
-void Character::setSociability(int X) {
+void Character::setSociability(int X)
+{
 	if (X >= 90)      SOCIABILITY = Sociability::adf1;
 	else if (X >= 75) SOCIABILITY = Sociability::adf2;
 	else if (X >= 50) SOCIABILITY = Sociability::adf3;
@@ -53,68 +58,82 @@ void Character::setSociability(int X) {
 	else if (X <= 25) SOCIABILITY = Sociability::adf5;
 }
 //----------------------------------------------------------
-void Character::setNeatness(const Neatness x) {
+void Character::setNeatness(const Neatness x)
+{
 	NEATNESS = x;
 }
 //----------------------------------------------------------
-void Character::setSociety_class(const SocietyClass X) {
+void Character::setSociety_class(const SocietyClass X)
+{
 	SOCIETY_CLASS = X;
 }
 //----------------------------------------------------------
-void Character::setWorld_view(const World_view X) {
+void Character::setWorld_view(const World_view X)
+{
 	//std::list<World_view, CW_V> = X;
 }
 //----------------------------------------------------------
-void Character::setMain_task(const Main_task X) {
+void Character::setMain_task(const Main_task X)
+{
 	MAIN_TASK = X;
 }
 //----------------------------------------------------------
-void Character::setMoment_task(const Moment_task X) {
+void Character::setMoment_task(const Moment_task X)
+{
 	MOMENT_TASK = X;
 }
 //----------------------------------------------------------
-void Character::setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3) {
+void Character::setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
+{
 	ATTRIB_P[0] = x0;
 	ATTRIB_P[1] = x1;
 	ATTRIB_P[2] = x2;
 	ATTRIB_P[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3) {
+void Character::setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
+{
 	ATTRIB_PM[0] = x0;
 	ATTRIB_PM[1] = x1;
 	ATTRIB_PM[2] = x2;
 	ATTRIB_PM[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3) {
+void Character::setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
+{
 	ATTRIB_M[0] = x0;
 	ATTRIB_M[1] = x1;
 	ATTRIB_M[2] = x2;
 	ATTRIB_M[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setPF(Physical_Fatigue X) {
+void Character::setPF(Physical_Fatigue X)
+{
 	PHYSICAL_FATIGUE = X;
 }
 //----------------------------------------------------------
-void Character::setMF(Mental_Fatigue X) {
+void Character::setMF(Mental_Fatigue X)
+{
 	MENTAL_FATIGUE = X;
 }
 //----------------------------------------------------------
-void Character::setThems(Thems N, Them* X) {
+void Character::setThems(Thems N, Them* X)
+{
 	THEMS.insert(std::make_pair(N, X));
 }
 //----------------------------------------------------------
-bool Character::SerializeFromXML(const tinyxml2::XMLElement* node) {
+bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
+{
 	//---------------------------
 	const tinyxml2::XMLAttribute* nameAtt = node->FindAttribute("name");
-	if (nameAtt) {
+	if (nameAtt)
+	{
 		setName(nameAtt->Value());
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* raceAtt = node->FindAttribute("race");
-	if (raceAtt) {
+	if (raceAtt)
+	{
 		std::string raceStr = raceAtt->Value();
 		if (raceStr == "Human") setRace(Race::Human);
 		else if (raceStr == "Orc") setRace(Race::Orc);
@@ -123,30 +142,35 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node) {
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* ageAtt = node->FindAttribute("age");
-	if (ageAtt) {
+	if (ageAtt)
+	{
 		setAge(ageAtt->IntValue());
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* sexAtt = node->FindAttribute("sex");
-	if (sexAtt) {
+	if (sexAtt)
+	{
 		std::string sexStr = sexAtt->Value();
 		if (sexStr == "Male") setSex(Sex::Male);
 		else if (sexStr == "Female") setSex(Sex::Female);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* socialAtt = node->FindAttribute("social");
-	if (socialAtt) {
+	if (socialAtt)
+	{
 		setSociability(socialAtt->IntValue());
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* neatnessAtt = node->FindAttribute("neatness");
-	if (neatnessAtt) {
+	if (neatnessAtt)
+	{
 		std::string neatnessStr = neatnessAtt->Value();
 		if (neatnessStr == "test") setNeatness(Neatness::test);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* society_classlAtt = node->FindAttribute("society_class");
-	if (society_classlAtt) {
+	if (society_classlAtt)
+	{
 		std::string society_classStr = society_classlAtt->Value();
 		if (society_classStr == "SC1") setSociety_class(SocietyClass::SC1);
 		else if (society_classStr == "SC2") setSociety_class(SocietyClass::SC2);
@@ -161,61 +185,73 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node) {
 	//---------------------------
 	//faction = ""
 	const tinyxml2::XMLAttribute* factionAtt = node->FindAttribute("faction");
-	if (factionAtt) {
+	if (factionAtt)
+	{
 		//TODO
 	}
 	//---------------------------
 	//main_task = "mat1"
 	const tinyxml2::XMLAttribute* main_taskAtt = node->FindAttribute("main_task");
-	if (main_taskAtt) {
+	if (main_taskAtt)
+	{
 		//TODO
 	}
 	//---------------------------
 	//moment_task = "mot1"
 	const tinyxml2::XMLAttribute* moment_taskAtt = node->FindAttribute("moment_task");
-	if (moment_taskAtt) {
+	if (moment_taskAtt)
+	{
 		//TODO
 	}
 	//---------------------------
 	//status = ""
 	const tinyxml2::XMLAttribute* statusAtt = node->FindAttribute("status");
-	if (statusAtt) {
+	if (statusAtt)
+	{
 		//TODO
 	}
 	//---------------------------
 	//p_fatigue = "pf1"
 	const tinyxml2::XMLAttribute* p_fatigueAtt = node->FindAttribute("p_fatigue");
-	if (p_fatigueAtt) {
+	if (p_fatigueAtt)
+	{
 		//TODO
 	}
 	//---------------------------
 	//m_fatigue = "mf1"
 	const tinyxml2::XMLAttribute* m_fatigueAtt = node->FindAttribute("m_fatigue");
-	if (m_fatigueAtt) {
+	if (m_fatigueAtt)
+	{
 		//TODO
 	}
 	//---------------------------
 	//mood = "m1"
 	const tinyxml2::XMLAttribute* moodAtt = node->FindAttribute("mood");
-	if (moodAtt) {
+	if (moodAtt)
+	{
 		//TODO
 	}
 	//---------------------------
 	const tinyxml2::XMLElement* att_p_Node = node->FirstChildElement("attrib_p");
-	if (att_p_Node) {
-		if (!ATTRIB_P.SerializeFromXML(att_p_Node)) {
+	if (att_p_Node)
+	{
+		if (!ATTRIB_P.SerializeFromXML(att_p_Node))
+		{
 			printf("ERROR: Problems in attrin_p");
 		}
 	}
 	const tinyxml2::XMLElement* att_pm_Node = node->FirstChildElement("attrib_pm");
-	if (att_pm_Node) {
-		if (!ATTRIB_PM.SerializeFromXML(att_pm_Node)) {
+	if (att_pm_Node)
+	{
+		if (!ATTRIB_PM.SerializeFromXML(att_pm_Node))
+		{
 			printf("ERROR: Problems in attrin_pm");
 		}
 	}
 	const tinyxml2::XMLElement* att_m_Node = node->FirstChildElement("attrib_m");
 	if (att_m_Node) {
-		if (!ATTRIB_M.SerializeFromXML(att_m_Node)) {
+		if (!ATTRIB_M.SerializeFromXML(att_m_Node))
+		{
 			printf("ERROR: Problems in attrin_m");
 		}
 	}
@@ -223,7 +259,8 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node) {
 	return true;
 }
 //----------------------------------------------------------
-void Character::Tick() {
+void Character::Tick()
+{
 	//printf("Char\n");
 };
 //----------------------------------------------------------
