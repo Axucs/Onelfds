@@ -4,6 +4,7 @@
 /Ugly world/tinyxml2/x64/Release
 /Ugly world/x64/Release
 /Ugly world/bin/UglyWorld_debug.exe
+/Ugly world/.vs/*
 *.db
 *.suo
 *.opendb
