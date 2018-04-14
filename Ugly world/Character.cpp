@@ -10,15 +10,15 @@
 Character::Character() : 
 	CharID(0),
 	NAME(),
-	RACE(Race::Human),
+	RACE(tRace::Human),
 	AGE(1),
-	SEX(Sex::Male),
-	SOCIABILITY(Sociability::adf1),
-	NEATNESS(Neatness::test),
-	SOCIETY_CLASS(SocietyClass::SC8),
+	SEX(tSex::Male),
+	SOCIABILITY(0),
+	NEATNESS(0),
+	SOCIETY_CLASS(tSocietyClass::SC8),
 	//WORLD_VIEW(World_view::cre_des),
-	MAIN_TASK(Main_task::mat6),
-	MOMENT_TASK(Moment_task::mot6),
+	MAIN_TASK(tMainTask::mat6),
+	MOMENT_TASK(tMomentTask::mot6),
 	ATTRIB_P(4, eAttrib::Strength, eAttrib::Agility, eAttrib::Endurance, eAttrib::Empty),
 	ATTRIB_PM(5, eAttrib::Will, eAttrib::Perception, eAttrib::Reflex, eAttrib::Dexterity, eAttrib::Empty),
 	ATTRIB_M(6, eAttrib::Intellect, eAttrib::Mind, eAttrib::Logics, eAttrib::Charisma, eAttrib::Memory, eAttrib::Empty),
@@ -34,7 +34,7 @@ void Character::setName(const char* x)
 	NAME = x;
 }
 //----------------------------------------------------------
-void Character::setRace(const Race x)
+void Character::setRace(const tRace x)
 {
 	RACE = x;
 }
@@ -44,43 +44,39 @@ void Character::setAge(int x)
 	AGE = x;
 }
 //----------------------------------------------------------
-void Character::setSex(Sex x)
+void Character::setSex(tSex x)
 {
 	SEX = x;
 }
 //----------------------------------------------------------
-void Character::setSociability(int X)
+void Character::setSociability(const tSociability x)
 {
-	if (X >= 90)      SOCIABILITY = Sociability::adf1;
-	else if (X >= 75) SOCIABILITY = Sociability::adf2;
-	else if (X >= 50) SOCIABILITY = Sociability::adf3;
-	else if (X > 25)  SOCIABILITY = Sociability::adf4;
-	else if (X <= 25) SOCIABILITY = Sociability::adf5;
+	SOCIABILITY = x;
 }
 //----------------------------------------------------------
-void Character::setNeatness(const Neatness x)
+void Character::setNeatness(const tNeatness x)
 {
 	NEATNESS = x;
 }
 //----------------------------------------------------------
-void Character::setSociety_class(const SocietyClass X)
+void Character::setSociety_class(const tSocietyClass x)
 {
-	SOCIETY_CLASS = X;
+	SOCIETY_CLASS = x;
 }
 //----------------------------------------------------------
-void Character::setWorld_view(const World_view X)
+void Character::setWorld_view(const World_view x)
 {
-	//std::list<World_view, CW_V> = X;
+	//std::list<World_view, CW_V> = x;
 }
 //----------------------------------------------------------
-void Character::setMain_task(const Main_task X)
+void Character::setMainTask(const tMainTask x)
 {
-	MAIN_TASK = X;
+	MAIN_TASK = x;
 }
 //----------------------------------------------------------
-void Character::setMoment_task(const Moment_task X)
+void Character::setMomentTask(const tMomentTask x)
 {
-	MOMENT_TASK = X;
+	MOMENT_TASK = x;
 }
 //----------------------------------------------------------
 void Character::setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
@@ -107,19 +103,19 @@ void Character::setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, u
 	ATTRIB_M[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setPF(Physical_Fatigue X)
+void Character::setPF(Physical_Fatigue x)
 {
-	PHYSICAL_FATIGUE = X;
+	PHYSICAL_FATIGUE = x;
 }
 //----------------------------------------------------------
-void Character::setMF(Mental_Fatigue X)
+void Character::setMF(Mental_Fatigue x)
 {
-	MENTAL_FATIGUE = X;
+	MENTAL_FATIGUE = x;
 }
 //----------------------------------------------------------
-void Character::setThems(Thems N, Them* X)
+void Character::setThems(Thems n, Them* x)
 {
-	THEMS.insert(std::make_pair(N, X));
+	THEMS.insert(std::make_pair(n, x));
 }
 //----------------------------------------------------------
 bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
@@ -135,10 +131,10 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	if (raceAtt)
 	{
 		std::string raceStr = raceAtt->Value();
-		if (raceStr == "Human") setRace(Race::Human);
-		else if (raceStr == "Orc") setRace(Race::Orc);
-		else if (raceStr == "Elf") setRace(Race::Elf);
-		else if (raceStr == "Dwarf") setRace(Race::Dwarf);
+		if (raceStr == "Human") setRace(tRace::Human);
+		else if (raceStr == "Orc") setRace(tRace::Orc);
+		else if (raceStr == "Elf") setRace(tRace::Elf);
+		else if (raceStr == "Dwarf") setRace(tRace::Dwarf);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* ageAtt = node->FindAttribute("age");
@@ -151,8 +147,8 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	if (sexAtt)
 	{
 		std::string sexStr = sexAtt->Value();
-		if (sexStr == "Male") setSex(Sex::Male);
-		else if (sexStr == "Female") setSex(Sex::Female);
+		if (sexStr == "Male") setSex(tSex::Male);
+		else if (sexStr == "Female") setSex(tSex::Female);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* socialAtt = node->FindAttribute("social");
@@ -164,23 +160,22 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* neatnessAtt = node->FindAttribute("neatness");
 	if (neatnessAtt)
 	{
-		std::string neatnessStr = neatnessAtt->Value();
-		if (neatnessStr == "test") setNeatness(Neatness::test);
+		setNeatness(neatnessAtt->IntValue());
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* society_classlAtt = node->FindAttribute("society_class");
 	if (society_classlAtt)
 	{
 		std::string society_classStr = society_classlAtt->Value();
-		if (society_classStr == "SC1") setSociety_class(SocietyClass::SC1);
-		else if (society_classStr == "SC2") setSociety_class(SocietyClass::SC2);
-		else if (society_classStr == "SC3") setSociety_class(SocietyClass::SC3);
-		else if (society_classStr == "SC4") setSociety_class(SocietyClass::SC4);
-		else if (society_classStr == "SC5") setSociety_class(SocietyClass::SC5);
-		else if (society_classStr == "SC6") setSociety_class(SocietyClass::SC6);
-		else if (society_classStr == "SC7") setSociety_class(SocietyClass::SC7);
-		else if (society_classStr == "SC8") setSociety_class(SocietyClass::SC8);
-		else if (society_classStr == "SC9") setSociety_class(SocietyClass::SC9);
+		if (society_classStr == "SC1") setSociety_class(tSocietyClass::SC1);
+		else if (society_classStr == "SC2") setSociety_class(tSocietyClass::SC2);
+		else if (society_classStr == "SC3") setSociety_class(tSocietyClass::SC3);
+		else if (society_classStr == "SC4") setSociety_class(tSocietyClass::SC4);
+		else if (society_classStr == "SC5") setSociety_class(tSocietyClass::SC5);
+		else if (society_classStr == "SC6") setSociety_class(tSocietyClass::SC6);
+		else if (society_classStr == "SC7") setSociety_class(tSocietyClass::SC7);
+		else if (society_classStr == "SC8") setSociety_class(tSocietyClass::SC8);
+		else if (society_classStr == "SC9") setSociety_class(tSocietyClass::SC9);
 	}
 	//---------------------------
 	//faction = ""

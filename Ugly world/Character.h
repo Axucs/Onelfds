@@ -13,7 +13,7 @@
 
 namespace tinyxml2
 {
-	class XMLElement;// это сделано что бы не делать #include <tinyxml2.h> сюда.
+	class XMLElement; // это сделано что бы не делать #include <tinyxml2.h> сюда.
 };
 
 //----------------------------------------------------------
@@ -22,15 +22,15 @@ class Character
 private:
 	int								CharID;
 	std::string						NAME;
-	Race							RACE;
+	tRace							RACE;
 	int								AGE;
-	Sex								SEX;
-	Sociability						SOCIABILITY;
-	Neatness						NEATNESS;
-	SocietyClass					SOCIETY_CLASS;
+	tSex							SEX;
+	tSociability					SOCIABILITY;
+	tNeatness						NEATNESS;
+	tSocietyClass					SOCIETY_CLASS;
 	//Faction
-	Main_task						MAIN_TASK;
-	Moment_task						MOMENT_TASK;
+	tMainTask						MAIN_TASK;
+	tMomentTask						MOMENT_TASK;
 	//Status						STATUS;
 	//kin list
 	//std::map<Skills,CSlills>		SKILLS;
@@ -50,14 +50,14 @@ public:
 	Character();
 	void setName(const char* x);
 	void setAge(const int x);
-	void setSex(const Sex x);
-	void setRace(const Race x);
-	void setSociability(const int x);
-	void setNeatness(const Neatness x);
-	void setSociety_class(const SocietyClass x);
+	void setSex(const tSex x);
+	void setRace(const tRace x);
+	void setSociability(const tSociability x);
+	void setNeatness(const tNeatness x);
+	void setSociety_class(const tSocietyClass x);
 	void setWorld_view(const World_view x);
-	void setMain_task(const Main_task x);
-	void setMoment_task(const Moment_task x);
+	void setMainTask(const tMainTask x);
+	void setMomentTask(const tMomentTask x);
 	void setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);

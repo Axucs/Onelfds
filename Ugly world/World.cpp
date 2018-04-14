@@ -26,7 +26,8 @@ World::World() : Areas(), Characters()
 {
 }
 //----------------------------------------------------------
-void World::Tick() {
+void World::Tick()
+{
 	for (auto area : Areas)
 	{
 		area->Tick();
@@ -42,7 +43,8 @@ void World::addArea(Area* X)
 	Areas.push_back(X);
 }
 //----------------------------------------------------------
-void World::addCharacter(Character* X) {
+void World::addCharacter(Character* X)
+{
 	Characters.push_back(X);
 }
 //----------------------------------------------------------
