@@ -9,8 +9,10 @@
 class World;
 class Character;
 
-class XML {
+class XML
+{
 public:
+	static bool LoadFactions(const char* fileName);
 	static World* LoadWorld(const char* fileName);
 	static bool LoadCharacters(const char* fileName, World* world);
 };

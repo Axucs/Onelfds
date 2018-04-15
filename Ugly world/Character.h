@@ -10,6 +10,7 @@
 #include "CAttrib.h"	//классы атрибутов
 #include "CChar.h"		//классы тем и черт характера
 #include "CharEnums.h"
+#include "Factions.h"
 
 namespace tinyxml2
 {
@@ -28,7 +29,7 @@ private:
 	tSociability					SOCIABILITY;
 	tNeatness						NEATNESS;
 	tSocietyClass					SOCIETY_CLASS;
-	//Faction
+	FactionID                       factionID = InvalidFactionID;
 	tMainTask						MAIN_TASK;
 	tMomentTask						MOMENT_TASK;
 	//Status						STATUS;

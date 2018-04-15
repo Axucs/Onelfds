@@ -7,6 +7,7 @@
 #include "XMLs.h"
 #include "World.h"
 #include "Character.h"
+#include "Factions.h"
 
 //----------------------------------------------------------
 World* XML::LoadWorld( const char* fileName)
@@ -61,11 +62,6 @@ bool XML::LoadCharacters( const char* fileName, World* world)
 		return false;
 	}
 	const tinyxml2::XMLElement* charNode = rootNode->FirstChildElement("character");
-	if (!charNode)
-	{
-		printf("\"%s\" have not obj node\n", fileName);
-		return false;
-	}
 	while (charNode)
 	{
 		Character* chr = new Character;
@@ -76,5 +72,29 @@ bool XML::LoadCharacters( const char* fileName, World* world)
 	return true;
 }
 //----------------------------------------------------------
-
+bool XML::LoadFactions(const char* fileName)
+{
+	tinyxml2::XMLDocument doc;
+	if (doc.LoadFile(fileName) != tinyxml2::XMLError::XML_SUCCESS)
+	{
+		printf("doc.LoadFile(\"%s\") error\n", fileName);
+		return false;
+	}
+	const tinyxml2::XMLElement* rootNode = doc.FirstChildElement();
+	if (!rootNode)
+	{
+		printf("\"%s\" have not root node\n", fileName);
+		return false;
+	}
+	const tinyxml2::XMLElement* factionNode = rootNode->FirstChildElement("faction");
+	while (factionNode)
+	{
+		Faction* faction = new Faction;
+		faction->SerializeFromXML(factionNode);
+		FACTIONS->addFaction(faction);
+		factionNode = factionNode->NextSiblingElement("faction");
+	}
+	return true;
+}
+//----------------------------------------------------------
 

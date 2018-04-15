@@ -128,6 +128,8 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharEnums.h" />
     <ClInclude Include="Factions.h" />
+    <ClInclude Include="explicitIntegralID.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="XMLs.h" />
   </ItemGroup>

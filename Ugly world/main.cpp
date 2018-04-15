@@ -10,6 +10,11 @@
 //----------------------------------------------------------
 void main()
 {
+	if (!XML::LoadFactions("factions.xml"))
+	{
+		printf("ERROR: Can't load factions\n");
+		return;
+	}
 	World* world1 = XML::LoadWorld("world.xml");
 	if (!world1)
 	{

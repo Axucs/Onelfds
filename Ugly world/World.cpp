@@ -4,6 +4,7 @@
 
 #include "World.h"
 #include "Character.h"
+#include "Factions.h"
 
 //----------------------------------------------------------
 Area::Area(AreaId id)
@@ -28,6 +29,7 @@ World::World() : Areas(), Characters()
 //----------------------------------------------------------
 void World::Tick()
 {
+	FACTIONS->Tick();
 	for (auto area : Areas)
 	{
 		area->Tick();
