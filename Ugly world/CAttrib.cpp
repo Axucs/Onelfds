@@ -20,9 +20,12 @@ MAttrib::MAttrib(int n, eAttrib t, ...) {
 	va_end(ap);
 };
 //----------------------------------------------------------
-bool MAttrib::setValue(const eAttrib type, value_type value) {
-	for (auto n = 0; n < number; n++) {
-		if (types[n] == type) {
+bool MAttrib::setValue(const eAttrib type, value_type value)
+{
+	for (auto n = 0; n < number; n++)
+	{
+		if (types[n] == type)
+		{
 			values[n] = value;
 			return true;
 		}
@@ -31,10 +34,12 @@ bool MAttrib::setValue(const eAttrib type, value_type value) {
 	return false;
 }
 //----------------------------------------------------------
-bool MAttrib::SerializeFromXML(const tinyxml2::XMLElement* node) {
+bool MAttrib::SerializeFromXML(const tinyxml2::XMLElement* node)
+{
 	const tinyxml2::XMLAttribute* attribute = node->FirstAttribute();
-	while (attribute) {
-		const value_type value =attribute->IntValue();
+	while (attribute)
+	{
+		const value_type value = attribute->IntValue();
 		std::string name = attribute->Name();
 		if (name == "str") {
 			if (!setValue(eAttrib::Strength, value)) return false;

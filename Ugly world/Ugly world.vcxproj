@@ -151,7 +151,9 @@
     <Xml Include="bin\characters.xml">
       <SubType>Designer</SubType>
     </Xml>
-    <Xml Include="bin\factions.xml" />
+    <Xml Include="bin\factions.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="bin\world.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -63,6 +63,10 @@ void Character::setSociety_class(const tSocietyClass x)
 {
 	SOCIETY_CLASS = x;
 }
+void Character::setFaction(const FactionID id)
+{
+	factionID = id;
+}
 //----------------------------------------------------------
 void Character::setWorld_view(const World_view x)
 {
@@ -178,11 +182,10 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 		else if (society_classStr == "SC9") setSociety_class(tSocietyClass::SC9);
 	}
 	//---------------------------
-	//faction = ""
 	const tinyxml2::XMLAttribute* factionAtt = node->FindAttribute("faction");
 	if (factionAtt)
 	{
-		//TODO
+		setFaction(FactionID(factionAtt->UnsignedValue()));
 	}
 	//---------------------------
 	//main_task = "mat1"

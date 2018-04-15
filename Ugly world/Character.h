@@ -56,6 +56,7 @@ public:
 	void setSociability(const tSociability x);
 	void setNeatness(const tNeatness x);
 	void setSociety_class(const tSocietyClass x);
+	void setFaction(const FactionID id);
 	void setWorld_view(const World_view x);
 	void setMainTask(const tMainTask x);
 	void setMomentTask(const tMomentTask x);
