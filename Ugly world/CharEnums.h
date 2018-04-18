@@ -56,6 +56,12 @@ enum class tMomentTask
 	mot6	//Очень сильно занят
 };
 //----------------------------------------------------------
+enum class tStatus
+{
+	status0,
+	status1
+};
+//----------------------------------------------------------
 enum class World_view
 {
 	cre_des,	//creation-destruction

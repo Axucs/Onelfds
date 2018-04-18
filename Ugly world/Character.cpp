@@ -15,10 +15,10 @@ Character::Character() :
 	SEX(tSex::Male),
 	SOCIABILITY(0),
 	NEATNESS(0),
-	SOCIETY_CLASS(tSocietyClass::SC8),
+	SOCIETY_CLASS(tSocietyClass::SC1),
 	//WORLD_VIEW(World_view::cre_des),
-	MAIN_TASK(tMainTask::mat6),
-	MOMENT_TASK(tMomentTask::mot6),
+	MAIN_TASK(tMainTask::mat1),
+	MOMENT_TASK(tMomentTask::mot1),
 	ATTRIB_P(4, eAttrib::Strength, eAttrib::Agility, eAttrib::Endurance, eAttrib::Empty),
 	ATTRIB_PM(5, eAttrib::Will, eAttrib::Perception, eAttrib::Reflex, eAttrib::Dexterity, eAttrib::Empty),
 	ATTRIB_M(6, eAttrib::Intellect, eAttrib::Mind, eAttrib::Logics, eAttrib::Charisma, eAttrib::Memory, eAttrib::Empty),
@@ -81,6 +81,11 @@ void Character::setMainTask(const tMainTask x)
 void Character::setMomentTask(const tMomentTask x)
 {
 	MOMENT_TASK = x;
+}
+//----------------------------------------------------------
+void Character::setStatus(const tStatus x)
+{
+	STATUS = x;
 }
 //----------------------------------------------------------
 void Character::setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
@@ -188,25 +193,36 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 		setFaction(FactionID(factionAtt->UnsignedValue()));
 	}
 	//---------------------------
-	//main_task = "mat1"
 	const tinyxml2::XMLAttribute* main_taskAtt = node->FindAttribute("main_task");
 	if (main_taskAtt)
 	{
-		//TODO
+		std::string main_taskStr = main_taskAtt->Value();
+		if (main_taskStr == "mat1") setMainTask(tMainTask::mat1);
+		else if (main_taskStr == "mat2") setMainTask(tMainTask::mat2);
+		else if (main_taskStr == "mat3") setMainTask(tMainTask::mat3);
+		else if (main_taskStr == "mat4") setMainTask(tMainTask::mat4);
+		else if (main_taskStr == "mat5") setMainTask(tMainTask::mat5);
+		else if (main_taskStr == "mat6") setMainTask(tMainTask::mat6);
 	}
 	//---------------------------
-	//moment_task = "mot1"
 	const tinyxml2::XMLAttribute* moment_taskAtt = node->FindAttribute("moment_task");
 	if (moment_taskAtt)
 	{
-		//TODO
+		std::string moment_taskStr = moment_taskAtt->Value();
+		if (moment_taskStr == "mot1") setMomentTask(tMomentTask::mot1);
+		else if (moment_taskStr == "mot2") setMomentTask(tMomentTask::mot2);
+		else if (moment_taskStr == "mot3") setMomentTask(tMomentTask::mot3);
+		else if (moment_taskStr == "mot4") setMomentTask(tMomentTask::mot4);
+		else if (moment_taskStr == "mot5") setMomentTask(tMomentTask::mot5);
+		else if (moment_taskStr == "mot6") setMomentTask(tMomentTask::mot6);
 	}
 	//---------------------------
-	//status = ""
 	const tinyxml2::XMLAttribute* statusAtt = node->FindAttribute("status");
 	if (statusAtt)
 	{
-		//TODO
+		std::string statusStr = statusAtt->Value();
+		if (statusStr == "status0") setStatus(tStatus::status0);
+		else if (statusStr == "status1") setStatus(tStatus::status0);
 	}
 	//---------------------------
 	//p_fatigue = "pf1"
@@ -238,6 +254,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 			printf("ERROR: Problems in attrin_p");
 		}
 	}
+	//---------------------------
 	const tinyxml2::XMLElement* att_pm_Node = node->FirstChildElement("attrib_pm");
 	if (att_pm_Node)
 	{
@@ -246,8 +263,10 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 			printf("ERROR: Problems in attrin_pm");
 		}
 	}
+	//---------------------------
 	const tinyxml2::XMLElement* att_m_Node = node->FirstChildElement("attrib_m");
-	if (att_m_Node) {
+	if (att_m_Node)
+	{
 		if (!ATTRIB_M.SerializeFromXML(att_m_Node))
 		{
 			printf("ERROR: Problems in attrin_m");

@@ -32,17 +32,17 @@ private:
 	FactionID                       factionID = InvalidFactionID;
 	tMainTask						MAIN_TASK;
 	tMomentTask						MOMENT_TASK;
-	//Status						STATUS;
-	//kin list
-	//std::map<Skills,CSlills>		SKILLS;
+	tStatus							STATUS;
+	Physical_Fatigue				PHYSICAL_FATIGUE;
+	Mental_Fatigue					MENTAL_FATIGUE;
+	Mood							MOOD;
 	MAttrib							ATTRIB_P;
 	MAttrib							ATTRIB_PM;
 	MAttrib							ATTRIB_M;
+	//kin list
+	//std::map<Skills,CSlills>		SKILLS;
 	//Knowledge						KNOWLEDGE;
 	//std::list<World_view, CW_V>	WORLD_VIEW;
-	Mood							MOOD;
-	Physical_Fatigue				PHYSICAL_FATIGUE;
-	Mental_Fatigue					MENTAL_FATIGUE;
 	//Aptitude						APTITUDE;
 	std::map<Thems,Them*>			THEMS;
 	//std::map<AreaId,int>			RSs;
@@ -60,6 +60,7 @@ public:
 	void setWorld_view(const World_view x);
 	void setMainTask(const tMainTask x);
 	void setMomentTask(const tMomentTask x);
+	void setStatus(const tStatus x);
 	void setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
