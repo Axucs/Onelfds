@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <characters>
-  <character name="Axucs" race="Human" age="22" sex="Male" social="34"
+  <character id="1" name="Axucs" race="Human" age="22" gender="Male" social="34"
              neatness="" society_class="SC5" faction="1" main_task="mat1"
              moment_task="mot1" status="" p_fatigue="pf1" m_fatigue="mf1"
              mood="m1" >
@@ -103,7 +103,7 @@
       <trait type="Conflicting"    	      gro="4" inf="0" sta="none" />
     </traits>
   </character> 
-  <character name="Anton" />
-  <character name="Babay" />
-  <character name="Wad" />
+  <character name="Anton" id="2" />
+  <character name="Babay" id="3" />
+  <character name="Wad" id="4" />
 </characters>

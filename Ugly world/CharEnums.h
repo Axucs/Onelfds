@@ -5,7 +5,7 @@
 #pragma once
 
 //----------------------------------------------------------
-enum class tRace
+enum class eRace
 {
 	Human,
 	Orc,
@@ -13,7 +13,7 @@ enum class tRace
 	Dwarf
 };
 //----------------------------------------------------------
-enum class tSex
+enum class eGender
 {
 	Male,
 	Female
@@ -23,7 +23,7 @@ using tSociability = int; // Жаждет общения (>= 90), необход
 //----------------------------------------------------------
 using tNeatness = int; // аккуратность
 //----------------------------------------------------------
-enum class tSocietyClass
+enum class eSocietyClass
 {
 	SC1,	//"Сырьевые"
 	SC2,	//"Ремеслиники"
@@ -69,7 +69,7 @@ enum class World_view
 	simp_exp	//self_improvement-exploitation
 };
 //----------------------------------------------------------
-enum class Mood
+enum class eMood
 {
 	m1,    //Отличное
 	m2,    //Хорошое
@@ -80,7 +80,7 @@ enum class Mood
 	m7,    //Ужасное
 };
 //----------------------------------------------------------
-enum class Physical_Fatigue
+enum class ePhysicalFatigue
 {
 	pf1,	//абсолютно бодрый
 	pf2,	//Бодрый
@@ -91,7 +91,7 @@ enum class Physical_Fatigue
 	pf7     //Мёртвый
 };
 //----------------------------------------------------------
-enum class Mental_Fatigue
+enum class eMentalFatigue
 {
 	mf1,	//абсолютно бодрый
 	mf2,	//Бодрый

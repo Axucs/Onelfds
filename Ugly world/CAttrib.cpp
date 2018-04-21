@@ -8,12 +8,14 @@
 #include "CAttrib.h"
 
 //----------------------------------------------------------
-MAttrib::MAttrib(int n, eAttrib t, ...) {
+MAttrib::MAttrib(int n, eAttrib t, ...)
+{
 	number = n;
 	if (number >= MAX_NUMBER) number = MAX_NUMBER;
 	va_list ap;
 	va_start(ap, n);
-	for ( auto j = 0; j < number; j++) {
+	for ( auto j = 0; j < number; j++)
+	{
 		types[j] = va_arg(ap, eAttrib);
 		values[j] = 0;
 	}
@@ -41,31 +43,56 @@ bool MAttrib::SerializeFromXML(const tinyxml2::XMLElement* node)
 	{
 		const value_type value = attribute->IntValue();
 		std::string name = attribute->Name();
-		if (name == "str") {
+		if (name == "str")
+		{
 			if (!setValue(eAttrib::Strength, value)) return false;
-		} else if (name == "agi") {
+		}
+		else if (name == "agi")
+		{
 			if (!setValue(eAttrib::Agility, value)) return false;
-		} else if (name == "end") {
+		}
+		else if (name == "end")
+		{
 			if (!setValue(eAttrib::Endurance, value)) return false;
-		} else if (name == "wil") {
+		}
+		else if (name == "wil")
+		{
 			if (!setValue(eAttrib::Will, value)) return false;
-		} else if (name == "per") {
+		}
+		else if (name == "per")
+		{
 			if (!setValue(eAttrib::Perception, value)) return false;
-		} else if (name == "ref") {
+		}
+		else if (name == "ref")
+		{
 			if (!setValue(eAttrib::Reflex, value)) return false;
-		} else if (name == "dex") {
+		}
+		else if (name == "dex")
+		{
 			if (!setValue(eAttrib::Dexterity, value)) return false;
-		} else if (name == "int") {
+		}
+		else if (name == "int")
+		{
 			if (!setValue(eAttrib::Intellect, value)) return false;
-		} else if (name == "min") {
+		}
+		else if (name == "min")
+		{
 			if (!setValue(eAttrib::Mind, value)) return false;
-		} else if (name == "log") {
+		}
+		else if (name == "log")
+		{
 			if (!setValue(eAttrib::Logics, value)) return false;
-		} else if (name == "cha") {
+		}
+		else if (name == "cha")
+		{
 			if (!setValue(eAttrib::Charisma, value)) return false;
-		} else if (name == "mem") {
+		}
+		else if (name == "mem")
+		{
 			if (!setValue(eAttrib::Memory, value)) return false;
-		} else if (name == "emp") {
+		}
+		else if (name == "emp")
+		{
 			if (!setValue(eAttrib::Empty, value)) return false;
 		}
 		attribute = attribute->Next();

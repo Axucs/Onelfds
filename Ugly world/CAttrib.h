@@ -6,12 +6,14 @@
 
 #include "CharEnums.h"
 
-namespace tinyxml2 {
+namespace tinyxml2
+{
 	class XMLElement;// это сделано что бы не делать #include <tinyxml2.h> сюда.
 };
 
 //----------------------------------------------------------
-enum class eAttrib {
+enum class eAttrib
+{
 	Empty,				 // пустота
 	//---------------------
 	Strength,			 // Сила
@@ -31,7 +33,8 @@ enum class eAttrib {
 };
 //----------------------------------------------------------
 // этот класс хранит нужное количество атрибутов одного круга
-class MAttrib {
+class MAttrib
+{
 public:
 	typedef unsigned int value_type;
 private:
@@ -41,7 +44,8 @@ private:
 	int              number;				// а это реальное количество атрибутов
 public:
 	MAttrib(int n, eAttrib t,...);
-	unsigned int& operator[](int n) {
+	unsigned int& operator[](int n)
+	{
 		return values[n];
 	}
 	bool setValue(const eAttrib type, value_type value);

@@ -10,7 +10,7 @@
 #include "Factions.h"
 
 //----------------------------------------------------------
-World* XML::LoadWorld( const char* fileName)
+World* XML::LoadWorld(const char* fileName)
 {
 	tinyxml2::XMLDocument doc;
 	if (doc.LoadFile(fileName) != tinyxml2::XMLError::XML_SUCCESS)
@@ -47,7 +47,7 @@ World* XML::LoadWorld( const char* fileName)
 	return out;
 }
 //----------------------------------------------------------
-bool XML::LoadCharacters( const char* fileName, World* world)
+bool XML::LoadCharacters(const char* fileName, World* world)
 {
 	tinyxml2::XMLDocument doc;
 	if (doc.LoadFile(fileName) != tinyxml2::XMLError::XML_SUCCESS)
