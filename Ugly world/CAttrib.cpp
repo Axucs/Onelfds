@@ -8,7 +8,7 @@
 #include "CAttrib.h"
 
 //----------------------------------------------------------
-MAttrib::MAttrib(int n, eAttrib t, ...)
+tMAttrib::tMAttrib(int n, eAttrib t, ...)
 {
 	number = n;
 	if (number >= MAX_NUMBER) number = MAX_NUMBER;
@@ -22,7 +22,7 @@ MAttrib::MAttrib(int n, eAttrib t, ...)
 	va_end(ap);
 };
 //----------------------------------------------------------
-bool MAttrib::setValue(const eAttrib type, value_type value)
+bool tMAttrib::setValue(const eAttrib type, value_type value)
 {
 	for (auto n = 0; n < number; n++)
 	{
@@ -36,7 +36,7 @@ bool MAttrib::setValue(const eAttrib type, value_type value)
 	return false;
 }
 //----------------------------------------------------------
-bool MAttrib::SerializeFromXML(const tinyxml2::XMLElement* node)
+bool tMAttrib::SerializeFromXML(const tinyxml2::XMLElement* node)
 {
 	const tinyxml2::XMLAttribute* attribute = node->FirstAttribute();
 	while (attribute)

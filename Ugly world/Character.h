@@ -20,9 +20,9 @@ namespace tinyxml2
 };
 
 //----------------------------------------------------------
-using CharID = ExplicitIntegralID<uint32_t, class CharIDTag>;
-constexpr CharID InvalidCharID(0);
-constexpr bool IsValid(const CharID id)
+using tCharID = ExplicitIntegralID<uint32_t, class CharIDTag>;
+constexpr tCharID InvalidCharID(0);
+constexpr bool IsValid(const tCharID id)
 {
 	return id != InvalidCharID;
 }
@@ -30,35 +30,35 @@ constexpr bool IsValid(const CharID id)
 class Character
 {
 private:
-	CharID							mCharID = InvalidCharID;
-	std::string						NAME = "";
-	eRace							RACE = eRace::Human;
-	int								AGE = 1;
-	eGender							Gender = eGender::Male;
-	tSociability					SOCIABILITY = 0;
-	tNeatness						NEATNESS = 0;
-	eSocietyClass					SOCIETY_CLASS = eSocietyClass::SC1;
-	FactionID                       factionID = InvalidFactionID;
-	tMainTask						MAIN_TASK = tMainTask::mat1;
-	tMomentTask						MOMENT_TASK = tMomentTask::mot1;
-	tStatus							STATUS = tStatus::status0;
-	ePhysicalFatigue				PHYSICAL_FATIGUE = ePhysicalFatigue::pf1;
-	eMentalFatigue					MENTAL_FATIGUE = eMentalFatigue::mf1;
-	eMood							MOOD = eMood::m1;
-	MAttrib							ATTRIB_P;
-	MAttrib							ATTRIB_PM;
-	MAttrib							ATTRIB_M;
-	//kin list
-	//std::map<Skills,CSlills>		SKILLS;
-	//Knowledge						KNOWLEDGE;
-	//std::list<World_view, CW_V>	WORLD_VIEW;
-	//Aptitude						APTITUDE;
-	std::map<Thems,Them*>			THEMS;
-	//std::map<AreaId,int>			RSs;
-	//std::map<Traits,Trait*>		TRAITS;
+	tCharID							mCharID = InvalidCharID;
+	std::string						mName = "";
+	eRace							mRace = eRace::Human;
+	int								mAge = 1;
+	eGender							mGender = eGender::Male;
+	tSociability					mSociability = 0;
+	tNeatness						mNeatness = 0;
+	eSocietyClass					mSocietyClass = eSocietyClass::SC1;
+	tFactionID						mFactionID = InvalidFactionID;
+	tMainTask						mMainTask = tMainTask::mat1;
+	tMomentTask						mMomentTask = tMomentTask::mot1;
+	tStatus							mStatus = tStatus::status0;
+	ePhysicalFatigue				mPhysicalFatigue = ePhysicalFatigue::pf1;
+	eMentalFatigue					mMentalFatigue = eMentalFatigue::mf1;
+	eMood							mMood = eMood::m1;
+	tMAttrib						mAttribP;
+	tMAttrib						mAttribPM;
+	tMAttrib						mAttribM;
+	std::list<tCharID>				mKinList;
+	std::map<Skills,int>			mSkills;
+	//Knowledge						mKnowledge;
+	//std::map<World_view, CW_V>	mWorldView;
+	//Aptitude						mAptitude;
+	std::map<Thems,Them*>			mThems;
+	//std::map<AreaId,int>			mRSs;
+	std::map<Traits,Trait*>			mTraits;
 public:
 	Character();
-	void setId(CharID id);
+	void setId(tCharID id);
 	void setName(const char* x);
 	void setAge(const int x);
 	void setGender(const eGender x);
@@ -66,7 +66,7 @@ public:
 	void setSociability(const tSociability x);
 	void setNeatness(const tNeatness x);
 	void setSocietyClass(const eSocietyClass x);
-	void setFaction(const FactionID id);
+	void setFaction(const tFactionID id);
 	void setWorldView(const World_view x);
 	void setMainTask(const tMainTask x);
 	void setMomentTask(const tMomentTask x);

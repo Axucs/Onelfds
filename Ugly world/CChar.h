@@ -4,13 +4,9 @@
 
 #pragma once
 
-enum EStatus {
-	Entrenched,
-	There,
-	None
-};
-
-class Them {
+//----------------------------------------------------------
+class Them
+{
 private:
 	int RS;
 public:
@@ -18,7 +14,8 @@ public:
 	{
 		RS = rs;
 	}
-	int RSChange(int Change) {
+	int RSChange(int Change)
+	{
 		int min = 0;
 		int max = 5;
 		//if (RS > min && RS < max) { RS = RS + Change ;}
@@ -27,18 +24,28 @@ public:
 		if (RS < min) { RS = min; }
 	}
 };
-
-class Trait {
+//----------------------------------------------------------
+class Trait
+{
 private:
+	enum EStatus
+	{
+		Entrenched,
+		There,
+		None
+	};
+
 	int Growth;
 	int Influence;
 	EStatus Status;
 public:
 
-	Trait(int G, int I, EStatus S) {
+	Trait(int G, int I, EStatus S)
+	{
 		Growth = G; Influence = I; Status = S;
 	}
-	int InfluenceChange(int Change) {
+	int InfluenceChange(int Change)
+	{
 		int min = 0;
 		int max = 5;
 		switch (Status)
@@ -58,12 +65,15 @@ public:
 		else if (Growth < 0) { InfluenceChange(-1), Growth = 10; }
 	};
 };
-
-class CW_V {
+//----------------------------------------------------------
+class CW_V
+{
 private:
 	int View;
 public: 
-	CW_V(int X) {
+	CW_V(int X)
+	{
 		View = X;
 	};
 };
+//----------------------------------------------------------

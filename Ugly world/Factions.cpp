@@ -11,7 +11,7 @@ bool Faction::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* idAtt = node->FindAttribute("name");
 	if (idAtt)
 	{
-		ID = FactionID(idAtt->UnsignedValue());
+		ID = tFactionID(idAtt->UnsignedValue());
 	}
 	return true;
 }

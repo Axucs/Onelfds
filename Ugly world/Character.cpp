@@ -8,56 +8,55 @@
 
 //----------------------------------------------------------
 Character::Character() : 
-	//WORLD_VIEW(World_view::cre_des),
-	ATTRIB_P(4, eAttrib::Strength, eAttrib::Agility, eAttrib::Endurance, eAttrib::Empty),
-	ATTRIB_PM(5, eAttrib::Will, eAttrib::Perception, eAttrib::Reflex, eAttrib::Dexterity, eAttrib::Empty),
-	ATTRIB_M(6, eAttrib::Intellect, eAttrib::Mind, eAttrib::Logics, eAttrib::Charisma, eAttrib::Memory, eAttrib::Empty),
-	THEMS()
+	//mWorldView(World_view::cre_des),
+	mAttribP(4, eAttrib::Strength, eAttrib::Agility, eAttrib::Endurance, eAttrib::Empty),
+	mAttribPM(5, eAttrib::Will, eAttrib::Perception, eAttrib::Reflex, eAttrib::Dexterity, eAttrib::Empty),
+	mAttribM(6, eAttrib::Intellect, eAttrib::Mind, eAttrib::Logics, eAttrib::Charisma, eAttrib::Memory, eAttrib::Empty)
 {
 }
 //----------------------------------------------------------
-void Character::setId(CharID id)
+void Character::setId(tCharID id)
 {
 	mCharID = id;
 }
 //----------------------------------------------------------
 void Character::setName(const char* x)
 {
-	NAME = x;
+	mName = x;
 }
 //----------------------------------------------------------
 void Character::setRace(const eRace x)
 {
-	RACE = x;
+	mRace = x;
 }
 //----------------------------------------------------------
 void Character::setAge(int x)
 {
-	AGE = x;
+	mAge = x;
 }
 //----------------------------------------------------------
 void Character::setGender(eGender x)
 {
-	Gender = x;
+	mGender = x;
 }
 //----------------------------------------------------------
 void Character::setSociability(const tSociability x)
 {
-	SOCIABILITY = x;
+	mSociability = x;
 }
 //----------------------------------------------------------
 void Character::setNeatness(const tNeatness x)
 {
-	NEATNESS = x;
+	mNeatness = x;
 }
 //----------------------------------------------------------
 void Character::setSocietyClass(const eSocietyClass x)
 {
-	SOCIETY_CLASS = x;
+	mSocietyClass = x;
 }
-void Character::setFaction(const FactionID id)
+void Character::setFaction(const tFactionID id)
 {
-	factionID = id;
+	mFactionID = id;
 }
 //----------------------------------------------------------
 void Character::setWorldView(const World_view x)
@@ -67,56 +66,56 @@ void Character::setWorldView(const World_view x)
 //----------------------------------------------------------
 void Character::setMainTask(const tMainTask x)
 {
-	MAIN_TASK = x;
+	mMainTask = x;
 }
 //----------------------------------------------------------
 void Character::setMomentTask(const tMomentTask x)
 {
-	MOMENT_TASK = x;
+	mMomentTask = x;
 }
 //----------------------------------------------------------
 void Character::setStatus(const tStatus x)
 {
-	STATUS = x;
+	mStatus = x;
 }
 //----------------------------------------------------------
 void Character::setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
 {
-	ATTRIB_P[0] = x0;
-	ATTRIB_P[1] = x1;
-	ATTRIB_P[2] = x2;
-	ATTRIB_P[3] = x3;
+	mAttribP[0] = x0;
+	mAttribP[1] = x1;
+	mAttribP[2] = x2;
+	mAttribP[3] = x3;
 }
 //----------------------------------------------------------
 void Character::setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
 {
-	ATTRIB_PM[0] = x0;
-	ATTRIB_PM[1] = x1;
-	ATTRIB_PM[2] = x2;
-	ATTRIB_PM[3] = x3;
+	mAttribPM[0] = x0;
+	mAttribPM[1] = x1;
+	mAttribPM[2] = x2;
+	mAttribPM[3] = x3;
 }
 //----------------------------------------------------------
 void Character::setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
 {
-	ATTRIB_M[0] = x0;
-	ATTRIB_M[1] = x1;
-	ATTRIB_M[2] = x2;
-	ATTRIB_M[3] = x3;
+	mAttribM[0] = x0;
+	mAttribM[1] = x1;
+	mAttribM[2] = x2;
+	mAttribM[3] = x3;
 }
 //----------------------------------------------------------
 void Character::setPF(ePhysicalFatigue x)
 {
-	PHYSICAL_FATIGUE = x;
+	mPhysicalFatigue = x;
 }
 //----------------------------------------------------------
 void Character::setMF(eMentalFatigue x)
 {
-	MENTAL_FATIGUE = x;
+	mMentalFatigue = x;
 }
 //----------------------------------------------------------
 void Character::setThems(Thems n, Them* x)
 {
-	THEMS.insert(std::make_pair(n, x));
+	mThems.insert(std::make_pair(n, x));
 }
 //----------------------------------------------------------
 bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
@@ -124,7 +123,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* idAtt = node->FindAttribute("id");
 	if (idAtt)
 	{
-		setId(CharID(idAtt->IntValue()));
+		setId(tCharID(idAtt->IntValue()));
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* nameAtt = node->FindAttribute("name");
@@ -187,7 +186,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* factionAtt = node->FindAttribute("faction");
 	if (factionAtt)
 	{
-		setFaction(FactionID(factionAtt->UnsignedValue()));
+		setFaction(tFactionID(factionAtt->UnsignedValue()));
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* main_taskAtt = node->FindAttribute("main_task");
@@ -246,7 +245,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLElement* att_p_Node = node->FirstChildElement("attrib_p");
 	if (att_p_Node)
 	{
-		if (!ATTRIB_P.SerializeFromXML(att_p_Node))
+		if (!mAttribP.SerializeFromXML(att_p_Node))
 		{
 			printf("ERROR: Problems in attrin_p");
 		}
@@ -255,7 +254,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLElement* att_pm_Node = node->FirstChildElement("attrib_pm");
 	if (att_pm_Node)
 	{
-		if (!ATTRIB_PM.SerializeFromXML(att_pm_Node))
+		if (!mAttribPM.SerializeFromXML(att_pm_Node))
 		{
 			printf("ERROR: Problems in attrin_pm");
 		}
@@ -264,7 +263,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLElement* att_m_Node = node->FirstChildElement("attrib_m");
 	if (att_m_Node)
 	{
-		if (!ATTRIB_M.SerializeFromXML(att_m_Node))
+		if (!mAttribM.SerializeFromXML(att_m_Node))
 		{
 			printf("ERROR: Problems in attrin_m");
 		}

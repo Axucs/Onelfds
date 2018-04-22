@@ -14,9 +14,9 @@ namespace tinyxml2
 };
 
 //----------------------------------------------------------
-using FactionID = ExplicitIntegralID<uint32_t, class FactionIDTag>;
-constexpr FactionID InvalidFactionID(0);
-constexpr bool IsValid(const FactionID id)
+using tFactionID = ExplicitIntegralID<uint32_t, class FactionIDTag>;
+constexpr tFactionID InvalidFactionID(0);
+constexpr bool IsValid(const tFactionID id)
 {
 	return id != InvalidFactionID;
 }
@@ -24,7 +24,7 @@ constexpr bool IsValid(const FactionID id)
 class Faction
 {
 private:
-	FactionID ID = InvalidFactionID;
+	tFactionID ID = InvalidFactionID;
 public:
 	Faction() = default;
 

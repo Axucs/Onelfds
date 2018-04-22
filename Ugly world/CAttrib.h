@@ -33,7 +33,7 @@ enum class eAttrib
 };
 //----------------------------------------------------------
 // этот класс хранит нужное количество атрибутов одного круга
-class MAttrib
+class tMAttrib
 {
 public:
 	typedef unsigned int value_type;
@@ -43,7 +43,7 @@ private:
 	value_type       values[MAX_NUMBER];	// тут значения атрибутов, количество с большим запасом
 	int              number;				// а это реальное количество атрибутов
 public:
-	MAttrib(int n, eAttrib t,...);
+	tMAttrib(int n, eAttrib t,...);
 	unsigned int& operator[](int n)
 	{
 		return values[n];
