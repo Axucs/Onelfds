@@ -8,7 +8,7 @@
 
 //----------------------------------------------------------
 Character::Character() : 
-	//mWorldView(World_view::cre_des),
+	//mWorldView(eWorldView::cre_des),
 	mAttribP(4, eAttrib::Strength, eAttrib::Agility, eAttrib::Endurance, eAttrib::Empty),
 	mAttribPM(5, eAttrib::Will, eAttrib::Perception, eAttrib::Reflex, eAttrib::Dexterity, eAttrib::Empty),
 	mAttribM(6, eAttrib::Intellect, eAttrib::Mind, eAttrib::Logics, eAttrib::Charisma, eAttrib::Memory, eAttrib::Empty)
@@ -59,9 +59,17 @@ void Character::setFaction(const tFactionID id)
 	mFactionID = id;
 }
 //----------------------------------------------------------
-void Character::setWorldView(const World_view x)
+void Character::setWorldView(const eWorldView type, const tWorldViewPos pos)
 {
-	//std::list<World_view, CW_V> = x;
+	auto it = mWorldView.find(type);
+	if (it == mWorldView.end())
+	{
+		mWorldView.insert(std::make_pair(type, pos));
+	}
+	else
+	{
+		it->second = pos;
+	}
 }
 //----------------------------------------------------------
 void Character::setMainTask(const tMainTask x)
@@ -266,6 +274,29 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 		if (!mAttribM.SerializeFromXML(att_m_Node))
 		{
 			printf("ERROR: Problems in attrin_m");
+		}
+	}
+	//---------------------------
+	const tinyxml2::XMLElement* worldViewNode = node->FirstChildElement("world_view");
+	if (worldViewNode)
+	{
+		const tinyxml2::XMLAttribute* creationDestructionAtt = worldViewNode->FindAttribute("creation-destruction");
+		if (creationDestructionAtt)
+		{
+			tWorldViewPos val(creationDestructionAtt->IntValue());
+			setWorldView(eWorldView::cre_des, val);
+		}
+		const tinyxml2::XMLAttribute* materialMentalAtt = worldViewNode->FindAttribute("material-mental");
+		if (materialMentalAtt)
+		{
+			tWorldViewPos val(materialMentalAtt->IntValue());
+			setWorldView(eWorldView::mat_men, val);
+		}
+		const tinyxml2::XMLAttribute* selfImprovementExploitationAtt = worldViewNode->FindAttribute("self_improvement-exploitation");
+		if (selfImprovementExploitationAtt)
+		{
+			tWorldViewPos val(selfImprovementExploitationAtt->IntValue());
+			setWorldView(eWorldView::simp_exp, val);
 		}
 	}
 	//---------------------------

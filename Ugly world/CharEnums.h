@@ -62,24 +62,6 @@ enum class tStatus
 	status1
 };
 //----------------------------------------------------------
-enum class World_view
-{
-	cre_des,	//creation-destruction
-	mat_men,	//material-mental
-	simp_exp	//self_improvement-exploitation
-};
-//----------------------------------------------------------
-enum class eMood
-{
-	m1,    //Отличное
-	m2,    //Хорошое
-	m3,    //Чють хорошое
-	m4,    //Среднее
-	m5,    //Чють плохое
-	m6,    //Плохое
-	m7,    //Ужасное
-};
-//----------------------------------------------------------
 enum class ePhysicalFatigue
 {
 	pf1,	//абсолютно бодрый
@@ -102,10 +84,28 @@ enum class eMentalFatigue
 	mf7		//Мёртвый
 };
 //----------------------------------------------------------
+enum class eMood
+{
+	m1,    //Отличное
+	m2,    //Хорошое
+	m3,    //Чють хорошое
+	m4,    //Среднее
+	m5,    //Чють плохое
+	m6,    //Плохое
+	m7,    //Ужасное
+};
+//----------------------------------------------------------
 enum class Skills
 {
 	Craft,
 	Combat
+};
+//----------------------------------------------------------
+enum class eWorldView
+{
+	cre_des,	//creation-destruction
+	mat_men,	//material-mental
+	simp_exp	//self_improvement-exploitation
 };
 //----------------------------------------------------------
 enum class Thems

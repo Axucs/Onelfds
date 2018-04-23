@@ -30,32 +30,32 @@ constexpr bool IsValid(const tCharID id)
 class Character
 {
 private:
-	tCharID							mCharID = InvalidCharID;
-	std::string						mName = "";
-	eRace							mRace = eRace::Human;
-	int								mAge = 1;
-	eGender							mGender = eGender::Male;
-	tSociability					mSociability = 0;
-	tNeatness						mNeatness = 0;
-	eSocietyClass					mSocietyClass = eSocietyClass::SC1;
-	tFactionID						mFactionID = InvalidFactionID;
-	tMainTask						mMainTask = tMainTask::mat1;
-	tMomentTask						mMomentTask = tMomentTask::mot1;
-	tStatus							mStatus = tStatus::status0;
-	ePhysicalFatigue				mPhysicalFatigue = ePhysicalFatigue::pf1;
-	eMentalFatigue					mMentalFatigue = eMentalFatigue::mf1;
-	eMood							mMood = eMood::m1;
-	tMAttrib						mAttribP;
-	tMAttrib						mAttribPM;
-	tMAttrib						mAttribM;
-	std::list<tCharID>				mKinList;
-	std::map<Skills,int>			mSkills;
-	//Knowledge						mKnowledge;
-	//std::map<World_view, CW_V>	mWorldView;
-	//Aptitude						mAptitude;
-	std::map<Thems,Them*>			mThems;
-	//std::map<AreaId,int>			mRSs;
-	std::map<Traits,Trait*>			mTraits;
+	tCharID								mCharID = InvalidCharID;
+	std::string							mName = "";
+	eRace								mRace = eRace::Human;
+	int									mAge = 1;
+	eGender								mGender = eGender::Male;
+	tSociability						mSociability = 0;
+	tNeatness							mNeatness = 0;
+	eSocietyClass						mSocietyClass = eSocietyClass::SC1;
+	tFactionID							mFactionID = InvalidFactionID;
+	tMainTask							mMainTask = tMainTask::mat1;
+	tMomentTask							mMomentTask = tMomentTask::mot1;
+	tStatus								mStatus = tStatus::status0;
+	ePhysicalFatigue					mPhysicalFatigue = ePhysicalFatigue::pf1;
+	eMentalFatigue						mMentalFatigue = eMentalFatigue::mf1;
+	eMood								mMood = eMood::m1;
+	tMAttrib							mAttribP;
+	tMAttrib							mAttribPM;
+	tMAttrib							mAttribM;
+	std::list<tCharID>					mKinList;
+	std::map<Skills,int>				mSkills;
+	std::map<eWorldView, tWorldViewPos>	mWorldView;
+	//Knowledge							mKnowledge;
+	//Aptitude							mAptitude;
+	std::map<Thems,Them*>				mThems;
+	//std::map<AreaId,int>				mRSs;
+	std::map<Traits,Trait*>				mTraits;
 public:
 	Character();
 	void setId(tCharID id);
@@ -67,7 +67,7 @@ public:
 	void setNeatness(const tNeatness x);
 	void setSocietyClass(const eSocietyClass x);
 	void setFaction(const tFactionID id);
-	void setWorldView(const World_view x);
+	void setWorldView(const eWorldView type, const tWorldViewPos pos);
 	void setMainTask(const tMainTask x);
 	void setMomentTask(const tMomentTask x);
 	void setStatus(const tStatus x);

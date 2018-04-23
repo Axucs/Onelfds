@@ -66,14 +66,13 @@ public:
 	};
 };
 //----------------------------------------------------------
-class CW_V
+class tWorldViewPos
 {
 private:
-	int View;
+	int mView;
 public: 
-	CW_V(int X)
+	tWorldViewPos(int x) : mView(x)
 	{
-		View = X;
 	};
 };
 //----------------------------------------------------------
