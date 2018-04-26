@@ -32,12 +32,14 @@ public:
 	void Tick();
 };
 //----------------------------------------------------------
-class Factions : public Singleton<Factions>
+class Factions
 {
-	friend Singleton<Factions>;
+	friend class Singleton<Factions>;
 private:
 	Factions() = default;
 public:
+	static Factions* instance();
+
 	void addFaction(const Faction* faction);
 	void Tick();
 };

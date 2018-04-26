@@ -51,11 +51,11 @@ private:
 	std::list<tCharID>					mKinList;
 	std::map<Skills,int>				mSkills;
 	std::map<eWorldView, tWorldViewPos>	mWorldView;
+	std::map<Thems,Them*>				mThems;
+	std::map<Traits,Trait*>				mTraits;
 	//Knowledge							mKnowledge;
 	//Aptitude							mAptitude;
-	std::map<Thems,Them*>				mThems;
 	//std::map<AreaId,int>				mRSs;
-	std::map<Traits,Trait*>				mTraits;
 public:
 	Character();
 	void setId(tCharID id);

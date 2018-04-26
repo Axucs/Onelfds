@@ -6,6 +6,11 @@
 #include <tinyxml2.h>
 
 //----------------------------------------------------------
+Factions* Factions::instance()
+{
+	return Singleton<Factions>::instance();
+}
+//----------------------------------------------------------
 bool Faction::SerializeFromXML(const tinyxml2::XMLElement* node)
 {
 	const tinyxml2::XMLAttribute* idAtt = node->FindAttribute("name");
