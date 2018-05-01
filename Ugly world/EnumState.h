@@ -8,16 +8,9 @@
 #include <memory> // std::unique_ptr
 #include <functional> // std::function
 #include <algorithm> // std::for_each
-#include <vector>
 #include <unordered_map>
 #include <string>
 
-//----------------------------------------------------------
-enum class eTestState
-{
-	pf1,
-	pf2
-};
 //----------------------------------------------------------
 class cEnumStateBase
 {
@@ -33,7 +26,9 @@ public:
 	void addState(T type, char* tag)
 	{
 		mStates.insert(std::make_pair(type, tag));
+		mBackStates.insert(std::make_pair(tag, type));
 	};
+
 	template <typename T>
 	void for_each(std::function<void(const T)> fun)
 	{
@@ -54,16 +49,29 @@ public:
 		return nullptr;
 	};
 
+	template <typename T>
+	T getStateByTag(const char* tag)
+	{
+		assert(!mBackStates.empty());
+		auto iter = mBackStates.find(tag);
+		assert(iter != mBackStates.end());
+		return iter->second;
+	};
+
+
 	//T operator++() { return x+1; }
 
 private:
 	std::unordered_map<T, std::string> mStates;
+	std::unordered_map<std::string, T> mBackStates;
 };
 //----------------------------------------------------------
 class cEnumStatesStorage
 {
 	friend class Singleton<cEnumStatesStorage>;
 public:
+	void init();
+
 	static cEnumStatesStorage* instance();
 
 	template <typename T>
@@ -111,6 +119,14 @@ public:
 	};
 
 	template <typename T>
+	T getStateByTag(const char* tag)
+	{
+		auto* state = getState<T>();
+		assert(state);
+		return state->getStateByTag<T>(tag);
+	};
+
+	template <typename T>
 	void for_each(std::function<void(const T)> fun)
 	{
 		auto* state = getState<T>();
@@ -122,9 +138,9 @@ public:
 
 private:
 	cEnumStatesStorage();
-	static void init();
 
 	std::unordered_map<size_t, std::unique_ptr<cEnumStateBase>> mEnumStates;
+	bool mInited = false;
 };
 //----------------------------------------------------------
 #define ESS cEnumStatesStorage::instance()
@@ -141,5 +157,11 @@ for (const auto e: { eTestState::a, eTestState::b } )
 
 std::for_each (std::begin(eTestState::All), std::end(eTestState::All), fun);
 */
+
+//	auto* ptr = ESS->getState<eTestState>();
+
+//	const char* state = ESS->getStateTag(eTestState::pf1);
+
+//	ESS->for_each<eTestState>([](const eTestState item) {});
 
 

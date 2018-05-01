@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include "World.h"
 #include "XMLs.h"
+#include "EnumState.h"
 
 //----------------------------------------------------------
 void main()
@@ -27,10 +28,12 @@ void main()
 		return;
 	}
 
+	ESS->init();
+
 	for (int n = 0;; n++)
 	{
 		Sleep(1000);
-		//printf("Tick number %u\n", n);
+		printf("Tick number %u\n", n);
 		world1->Tick();
 	}
 }

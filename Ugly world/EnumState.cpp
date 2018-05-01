@@ -3,6 +3,7 @@
 //----------------------------------------------------------
 
 #include "EnumState.h"
+#include "CharEnums.h"
 
 //----------------------------------------------------------
 cEnumStatesStorage::cEnumStatesStorage()
@@ -17,13 +18,29 @@ cEnumStatesStorage* cEnumStatesStorage::instance()
 //----------------------------------------------------------
 void cEnumStatesStorage::init()
 {
-	ESS->addState(eTestState::pf1, "pf1");
-	ESS->addState(eTestState::pf2, "pf2");
+	if (mInited)
+	{
+		return;
+	}
 
-	auto* ptr = ESS->getState<eTestState>();
+	addState(eRace::Human, "Human");
+	addState(eRace::Orc, "Orc");
+	addState(eRace::Elf, "Elf");
+	addState(eRace::Dwarf, "Dwarf");
 
-	const char* state = ESS->getStateTag(eTestState::pf1);
+	addState(eGender::Male, "Male");
+	addState(eGender::Female, "Female");
 
-	ESS->for_each<eTestState>([](const eTestState item) {});
+	addState(eSocietyClass::SC1, "SC1");
+	addState(eSocietyClass::SC2, "SC2");
+	addState(eSocietyClass::SC3, "SC3");
+	addState(eSocietyClass::SC4, "SC4");
+	addState(eSocietyClass::SC5, "SC5");
+	addState(eSocietyClass::SC6, "SC6");
+	addState(eSocietyClass::SC7, "SC7");
+	addState(eSocietyClass::SC8, "SC8");
+	addState(eSocietyClass::SC9, "SC9");
+
+	mInited = true;
 }
 //----------------------------------------------------------

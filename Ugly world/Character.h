@@ -39,9 +39,9 @@ private:
 	tNeatness							mNeatness = 0;
 	eSocietyClass						mSocietyClass = eSocietyClass::SC1;
 	tFactionID							mFactionID = InvalidFactionID;
-	tMainTask							mMainTask = tMainTask::mat1;
-	tMomentTask							mMomentTask = tMomentTask::mot1;
-	tStatus								mStatus = tStatus::status0;
+	eMainTask							mMainTask = eMainTask::mat1;
+	eMomentTask							mMomentTask = eMomentTask::mot1;
+	eStatus								mStatus = eStatus::status0;
 	ePhysicalFatigue					mPhysicalFatigue = ePhysicalFatigue::pf1;
 	eMentalFatigue						mMentalFatigue = eMentalFatigue::mf1;
 	eMood								mMood = eMood::m1;
@@ -68,9 +68,9 @@ public:
 	void setSocietyClass(const eSocietyClass x);
 	void setFaction(const tFactionID id);
 	void setWorldView(const eWorldView type, const tWorldViewPos pos);
-	void setMainTask(const tMainTask x);
-	void setMomentTask(const tMomentTask x);
-	void setStatus(const tStatus x);
+	void setMainTask(const eMainTask x);
+	void setMomentTask(const eMomentTask x);
+	void setStatus(const eStatus x);
 	void setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);

@@ -36,7 +36,7 @@ enum class eSocietyClass
 	SC9		//"Скрытый"
 };
 //----------------------------------------------------------
-enum class tMainTask
+enum class eMainTask
 {
 	mat1,    //свободен
 	mat2,    //практически свободен
@@ -46,7 +46,7 @@ enum class tMainTask
 	mat6     //Очень сильно занят
 };
 //----------------------------------------------------------
-enum class tMomentTask
+enum class eMomentTask
 {
 	mot1,	//свободен
 	mot2,	//практически свободен
@@ -56,7 +56,7 @@ enum class tMomentTask
 	mot6	//Очень сильно занят
 };
 //----------------------------------------------------------
-enum class tStatus
+enum class eStatus
 {
 	status0,
 	status1

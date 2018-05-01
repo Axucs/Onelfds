@@ -5,6 +5,7 @@
 #include <string>
 #include <tinyxml2.h>
 #include "Character.h"
+#include "EnumState.h"
 
 //----------------------------------------------------------
 Character::Character() : 
@@ -72,17 +73,17 @@ void Character::setWorldView(const eWorldView type, const tWorldViewPos pos)
 	}
 }
 //----------------------------------------------------------
-void Character::setMainTask(const tMainTask x)
+void Character::setMainTask(const eMainTask x)
 {
 	mMainTask = x;
 }
 //----------------------------------------------------------
-void Character::setMomentTask(const tMomentTask x)
+void Character::setMomentTask(const eMomentTask x)
 {
 	mMomentTask = x;
 }
 //----------------------------------------------------------
-void Character::setStatus(const tStatus x)
+void Character::setStatus(const eStatus x)
 {
 	mStatus = x;
 }
@@ -143,11 +144,8 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* raceAtt = node->FindAttribute("race");
 	if (raceAtt)
 	{
-		std::string raceStr = raceAtt->Value();
-		if (raceStr == "Human") setRace(eRace::Human);
-		else if (raceStr == "Orc") setRace(eRace::Orc);
-		else if (raceStr == "Elf") setRace(eRace::Elf);
-		else if (raceStr == "Dwarf") setRace(eRace::Dwarf);
+		auto state = ESS->getStateByTag<eRace>(raceAtt->Value());
+		setRace(state);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* ageAtt = node->FindAttribute("age");
@@ -201,32 +199,32 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	if (main_taskAtt)
 	{
 		std::string main_taskStr = main_taskAtt->Value();
-		if (main_taskStr == "mat1") setMainTask(tMainTask::mat1);
-		else if (main_taskStr == "mat2") setMainTask(tMainTask::mat2);
-		else if (main_taskStr == "mat3") setMainTask(tMainTask::mat3);
-		else if (main_taskStr == "mat4") setMainTask(tMainTask::mat4);
-		else if (main_taskStr == "mat5") setMainTask(tMainTask::mat5);
-		else if (main_taskStr == "mat6") setMainTask(tMainTask::mat6);
+		if (main_taskStr == "mat1") setMainTask(eMainTask::mat1);
+		else if (main_taskStr == "mat2") setMainTask(eMainTask::mat2);
+		else if (main_taskStr == "mat3") setMainTask(eMainTask::mat3);
+		else if (main_taskStr == "mat4") setMainTask(eMainTask::mat4);
+		else if (main_taskStr == "mat5") setMainTask(eMainTask::mat5);
+		else if (main_taskStr == "mat6") setMainTask(eMainTask::mat6);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* moment_taskAtt = node->FindAttribute("moment_task");
 	if (moment_taskAtt)
 	{
 		std::string moment_taskStr = moment_taskAtt->Value();
-		if (moment_taskStr == "mot1") setMomentTask(tMomentTask::mot1);
-		else if (moment_taskStr == "mot2") setMomentTask(tMomentTask::mot2);
-		else if (moment_taskStr == "mot3") setMomentTask(tMomentTask::mot3);
-		else if (moment_taskStr == "mot4") setMomentTask(tMomentTask::mot4);
-		else if (moment_taskStr == "mot5") setMomentTask(tMomentTask::mot5);
-		else if (moment_taskStr == "mot6") setMomentTask(tMomentTask::mot6);
+		if (moment_taskStr == "mot1") setMomentTask(eMomentTask::mot1);
+		else if (moment_taskStr == "mot2") setMomentTask(eMomentTask::mot2);
+		else if (moment_taskStr == "mot3") setMomentTask(eMomentTask::mot3);
+		else if (moment_taskStr == "mot4") setMomentTask(eMomentTask::mot4);
+		else if (moment_taskStr == "mot5") setMomentTask(eMomentTask::mot5);
+		else if (moment_taskStr == "mot6") setMomentTask(eMomentTask::mot6);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* statusAtt = node->FindAttribute("status");
 	if (statusAtt)
 	{
 		std::string statusStr = statusAtt->Value();
-		if (statusStr == "status0") setStatus(tStatus::status0);
-		else if (statusStr == "status1") setStatus(tStatus::status0);
+		if (statusStr == "status0") setStatus(eStatus::status0);
+		else if (statusStr == "status1") setStatus(eStatus::status0);
 	}
 	//---------------------------
 	//p_fatigue = "pf1"
