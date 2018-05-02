@@ -26,6 +26,8 @@ public:
 
 	void addState(T type, char* tag)
 	{
+		AssertError(mStates.find(type) == mStates.end(), "type already exists");
+		AssertError(mBackStates.find(tag) == mBackStates.end(), "tag already exists");
 		mStates.insert(std::make_pair(type, tag));
 		mBackStates.insert(std::make_pair(tag, type));
 	};
@@ -119,6 +121,7 @@ public:
 	template <typename T>
 	T getStateByTag(const char* tag)
 	{
+		AssertError(tag && tag[0], "tag is empty");
 		auto* state = getState<T>();
 		AssertError(state, "State not found");
 		return state->getStateByTag<T>(tag);

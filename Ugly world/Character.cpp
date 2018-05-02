@@ -122,7 +122,7 @@ void Character::setMF(eMentalFatigue x)
 	mMentalFatigue = x;
 }
 //----------------------------------------------------------
-void Character::setThems(Thems n, Them* x)
+void Character::setThems(eThems n, Them* x)
 {
 	mThems.insert(std::make_pair(n, x));
 }

@@ -2,7 +2,7 @@
 <characters>
   <character id="1" name="Axucs" race="Human" age="22" gender="Male" social="34"
              neatness="" society_class="SC5" faction="1" main_task="mat1"
-             moment_task="mot1" status="" p_fatigue="pf1" m_fatigue="mf1"
+             moment_task="mot1" status="status0" p_fatigue="pf1" m_fatigue="mf1"
              mood="m1" >
     <attrib_p  str="43" agi="32" end="15" emp="60" />
     <attrib_pm wil="100" per="15" ref="23" dex="32" emp="30" />

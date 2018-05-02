@@ -51,8 +51,8 @@ private:
 	std::list<tCharID>					mKinList;
 	std::map<Skills,int>				mSkills;
 	std::map<eWorldView, tWorldViewPos>	mWorldView;
-	std::map<Thems,Them*>				mThems;
-	std::map<Traits,Trait*>				mTraits;
+	std::map<eThems,Them*>				mThems;
+	std::map<eTraits,Trait*>			mTraits;
 	//Knowledge							mKnowledge;
 	//Aptitude							mAptitude;
 	//std::map<AreaId,int>				mRSs;
@@ -76,7 +76,7 @@ public:
 	void setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setPF(ePhysicalFatigue x);
 	void setMF(eMentalFatigue x);
-	void setThems(Thems n, Them* x);
+	void setThems(eThems n, Them* x);
 
 	bool SerializeFromXML(const tinyxml2::XMLElement* node);
 	void Tick();

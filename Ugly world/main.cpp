@@ -11,6 +11,8 @@
 //----------------------------------------------------------
 void main()
 {
+	ESS->init();
+
 	if (!XML::LoadFactions("factions.xml"))
 	{
 		printf("ERROR: Can't load factions\n");
@@ -27,8 +29,6 @@ void main()
 		printf("ERROR: Can't load chars\n");
 		return;
 	}
-
-	ESS->init();
 
 	for (int n = 0;; n++)
 	{

@@ -108,29 +108,29 @@ enum class eWorldView
 	simp_exp	//self_improvement-exploitation
 };
 //----------------------------------------------------------
-enum class Thems
+enum class eThems
 {
 	Politics,			//политика
 	Fauna,				//фауна
 	History,			//История
 	Architecture,		//Архитектура
 	Handicraft,			//кравт, производство чего лиобо
-	Medicine,			//Медецына
+	Medicine,			//Медицина
 	Theology,			//Тиалогия
 	Weather,			//климат, погода
 	Society,			//Общество 
 	Warfare,			//Война
 	Economy,			//Экономика
 	Flora,				//Флора
-	Entertainmen,		//Развлечение
+	Entertainment,		//Развлечение
 	Culture,			//Культура
 	Law,				//Законы, порядки
-	Family,				//Семя 
+	Family,				//Семья
 	Rumors,				//слухи 
 	News				//Новости
 };
 //----------------------------------------------------------
-enum class Traits
+enum class eTraits
 {
 	Honest,				//Честный
 	Deceptive,			//Лживый
@@ -139,17 +139,17 @@ enum class Traits
 	Lonely,				//Одинокий
 	Sociable,			//Общительный
 	Gambler,			//Азартный
-	cold_blooded,		//Хладнокровный
+	ColdBlooded,		//Хладнокровный
 	Responsible,		//Ответственный
 	Irresponsible,		//Безответственный
 	Attentive,			//Внимательный
 	Absentminded,		//рассеянный
 	Careful,			//Аккуратный
-	sloppy,				//Неряшливый
+	Sloppy,				//Неряшливый
 	Delicate,			//Деликатный
 	Rough,				//Грубый
 	Conceited,			//Тщеславный
-	Self_sufficient,	//Самодостаточный
+	SelfSufficient,		//Самодостаточный
 	Rasper,				//Резкий
 	Flexible,			//Гибкий
 	Farsighted,			//Дальновидный
@@ -173,10 +173,10 @@ enum class Traits
 	Demanding,			//Требовательный
 	Witty,				//Остроумный
 	Melancholy,			//Меланхоличный
-	dedicated,			//Преданный
+	Dedicated,			//Преданный
 	Independent,		//Независимый
 	Opinionated,		//Упрямый
 	Diplomatic,			//Дипломатичный
-	conflicting    		//Конфликтный
+	Conflicting    		//Конфликтный
 };
 //----------------------------------------------------------
