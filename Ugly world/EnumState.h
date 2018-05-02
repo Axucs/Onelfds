@@ -10,6 +10,7 @@
 #include <algorithm> // std::for_each
 #include <unordered_map>
 #include <string>
+#include "Console.h" // AsertError
 
 //----------------------------------------------------------
 class cEnumStateBase
@@ -52,14 +53,11 @@ public:
 	template <typename T>
 	T getStateByTag(const char* tag)
 	{
-		assert(!mBackStates.empty());
+		AssertError(!mBackStates.empty(), "BackState is empty");
 		auto iter = mBackStates.find(tag);
-		assert(iter != mBackStates.end());
+		AssertError(iter != mBackStates.end(), "Tag not found");
 		return iter->second;
 	};
-
-
-	//T operator++() { return x+1; }
 
 private:
 	std::unordered_map<T, std::string> mStates;
@@ -122,7 +120,7 @@ public:
 	T getStateByTag(const char* tag)
 	{
 		auto* state = getState<T>();
-		assert(state);
+		AssertError(state, "State not found");
 		return state->getStateByTag<T>(tag);
 	};
 
@@ -145,23 +143,5 @@ private:
 //----------------------------------------------------------
 #define ESS cEnumStatesStorage::instance()
 //----------------------------------------------------------
-
-/*
-static const eTestState All[] = { a, b, c };
-
-for (const auto e: eTestState::All)
-	fun(e);
-
-for (const auto e: { eTestState::a, eTestState::b } )
-	fun(e);
-
-std::for_each (std::begin(eTestState::All), std::end(eTestState::All), fun);
-*/
-
-//	auto* ptr = ESS->getState<eTestState>();
-
-//	const char* state = ESS->getStateTag(eTestState::pf1);
-
-//	ESS->for_each<eTestState>([](const eTestState item) {});
 
 
