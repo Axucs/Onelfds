@@ -157,9 +157,8 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* genderAtt = node->FindAttribute("gender");
 	if (genderAtt)
 	{
-		std::string genderStr = genderAtt->Value();
-		if (genderStr == "Male") setGender(eGender::Male);
-		else if (genderStr == "Female") setGender(eGender::Female);
+		auto state = ESS->getStateByTag<eGender>(genderAtt->Value());
+		setGender(state);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* socialAtt = node->FindAttribute("social");
@@ -177,16 +176,8 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* societyClasslAtt = node->FindAttribute("society_class");
 	if (societyClasslAtt)
 	{
-		std::string societyClassStr = societyClasslAtt->Value();
-		if (societyClassStr == "SC1") setSocietyClass(eSocietyClass::SC1);
-		else if (societyClassStr == "SC2") setSocietyClass(eSocietyClass::SC2);
-		else if (societyClassStr == "SC3") setSocietyClass(eSocietyClass::SC3);
-		else if (societyClassStr == "SC4") setSocietyClass(eSocietyClass::SC4);
-		else if (societyClassStr == "SC5") setSocietyClass(eSocietyClass::SC5);
-		else if (societyClassStr == "SC6") setSocietyClass(eSocietyClass::SC6);
-		else if (societyClassStr == "SC7") setSocietyClass(eSocietyClass::SC7);
-		else if (societyClassStr == "SC8") setSocietyClass(eSocietyClass::SC8);
-		else if (societyClassStr == "SC9") setSocietyClass(eSocietyClass::SC9);
+		auto state = ESS->getStateByTag<eSocietyClass>(societyClasslAtt->Value());
+		setSocietyClass(state);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* factionAtt = node->FindAttribute("faction");
@@ -198,33 +189,22 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	const tinyxml2::XMLAttribute* main_taskAtt = node->FindAttribute("main_task");
 	if (main_taskAtt)
 	{
-		std::string main_taskStr = main_taskAtt->Value();
-		if (main_taskStr == "mat1") setMainTask(eMainTask::mat1);
-		else if (main_taskStr == "mat2") setMainTask(eMainTask::mat2);
-		else if (main_taskStr == "mat3") setMainTask(eMainTask::mat3);
-		else if (main_taskStr == "mat4") setMainTask(eMainTask::mat4);
-		else if (main_taskStr == "mat5") setMainTask(eMainTask::mat5);
-		else if (main_taskStr == "mat6") setMainTask(eMainTask::mat6);
+		auto state = ESS->getStateByTag<eMainTask>(main_taskAtt->Value());
+		setMainTask(state);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* moment_taskAtt = node->FindAttribute("moment_task");
 	if (moment_taskAtt)
 	{
-		std::string moment_taskStr = moment_taskAtt->Value();
-		if (moment_taskStr == "mot1") setMomentTask(eMomentTask::mot1);
-		else if (moment_taskStr == "mot2") setMomentTask(eMomentTask::mot2);
-		else if (moment_taskStr == "mot3") setMomentTask(eMomentTask::mot3);
-		else if (moment_taskStr == "mot4") setMomentTask(eMomentTask::mot4);
-		else if (moment_taskStr == "mot5") setMomentTask(eMomentTask::mot5);
-		else if (moment_taskStr == "mot6") setMomentTask(eMomentTask::mot6);
+		auto state = ESS->getStateByTag<eMomentTask>(moment_taskAtt->Value());
+		setMomentTask(state);
 	}
 	//---------------------------
 	const tinyxml2::XMLAttribute* statusAtt = node->FindAttribute("status");
 	if (statusAtt)
 	{
-		std::string statusStr = statusAtt->Value();
-		if (statusStr == "status0") setStatus(eStatus::status0);
-		else if (statusStr == "status1") setStatus(eStatus::status0);
+		auto state = ESS->getStateByTag<eStatus>(statusAtt->Value());
+		setStatus(state);
 	}
 	//---------------------------
 	//p_fatigue = "pf1"
