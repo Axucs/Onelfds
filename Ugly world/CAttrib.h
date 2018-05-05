@@ -4,12 +4,8 @@
 
 #pragma once
 
+#include <tinyxml2.h>
 #include "CharEnums.h"
-
-namespace tinyxml2
-{
-	class XMLElement;// это сделано что бы не делать #include <tinyxml2.h> сюда.
-};
 
 //----------------------------------------------------------
 enum class eAttrib

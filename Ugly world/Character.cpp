@@ -2,62 +2,15 @@
 // заголовок тут (c)
 //----------------------------------------------------------
 
-#include <string>
-#include <tinyxml2.h>
 #include "Character.h"
 #include "EnumState.h"
 
 //----------------------------------------------------------
 Character::Character() : 
-	//mWorldView(eWorldView::cre_des),
 	mAttribP(4, eAttrib::Strength, eAttrib::Agility, eAttrib::Endurance, eAttrib::Empty),
 	mAttribPM(5, eAttrib::Will, eAttrib::Perception, eAttrib::Reflex, eAttrib::Dexterity, eAttrib::Empty),
 	mAttribM(6, eAttrib::Intellect, eAttrib::Mind, eAttrib::Logics, eAttrib::Charisma, eAttrib::Memory, eAttrib::Empty)
 {
-}
-//----------------------------------------------------------
-void Character::setId(tCharID id)
-{
-	mCharID = id;
-}
-//----------------------------------------------------------
-void Character::setName(const char* x)
-{
-	mName = x;
-}
-//----------------------------------------------------------
-void Character::setRace(const eRace x)
-{
-	mRace = x;
-}
-//----------------------------------------------------------
-void Character::setAge(int x)
-{
-	mAge = x;
-}
-//----------------------------------------------------------
-void Character::setGender(eGender x)
-{
-	mGender = x;
-}
-//----------------------------------------------------------
-void Character::setSociability(const tSociability x)
-{
-	mSociability = x;
-}
-//----------------------------------------------------------
-void Character::setNeatness(const tNeatness x)
-{
-	mNeatness = x;
-}
-//----------------------------------------------------------
-void Character::setSocietyClass(const eSocietyClass x)
-{
-	mSocietyClass = x;
-}
-void Character::setFaction(const tFactionID id)
-{
-	mFactionID = id;
 }
 //----------------------------------------------------------
 void Character::setWorldView(const eWorldView type, const tWorldViewPos pos)
@@ -71,21 +24,6 @@ void Character::setWorldView(const eWorldView type, const tWorldViewPos pos)
 	{
 		it->second = pos;
 	}
-}
-//----------------------------------------------------------
-void Character::setMainTask(const eMainTask x)
-{
-	mMainTask = x;
-}
-//----------------------------------------------------------
-void Character::setMomentTask(const eMomentTask x)
-{
-	mMomentTask = x;
-}
-//----------------------------------------------------------
-void Character::setStatus(const eStatus x)
-{
-	mStatus = x;
 }
 //----------------------------------------------------------
 void Character::setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3)
@@ -112,16 +50,6 @@ void Character::setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, u
 	mAttribM[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setPF(ePhysicalFatigue x)
-{
-	mPhysicalFatigue = x;
-}
-//----------------------------------------------------------
-void Character::setMF(eMentalFatigue x)
-{
-	mMentalFatigue = x;
-}
-//----------------------------------------------------------
 void Character::setThems(eThems n, Them* x)
 {
 	mThems.insert(std::make_pair(n, x));
@@ -129,103 +57,94 @@ void Character::setThems(eThems n, Them* x)
 //----------------------------------------------------------
 bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 {
-	const tinyxml2::XMLAttribute* idAtt = node->FindAttribute("id");
-	if (idAtt)
+	const tinyxml2::XMLAttribute* attribute = node->FindAttribute("id");
+	if (attribute)
 	{
-		setId(tCharID(idAtt->IntValue()));
+		mCharID = tCharID(attribute->IntValue());
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* nameAtt = node->FindAttribute("name");
-	if (nameAtt)
+	attribute = node->FindAttribute("name");
+	if (attribute)
 	{
-		setName(nameAtt->Value());
+		mName = attribute->Value();
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* raceAtt = node->FindAttribute("race");
-	if (raceAtt)
+	attribute = node->FindAttribute("race");
+	if (attribute)
 	{
-		auto state = ESS->getStateByTag<eRace>(raceAtt->Value());
-		setRace(state);
+		mRace = ESS->getStateByTag<eRace>(attribute->Value());
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* ageAtt = node->FindAttribute("age");
-	if (ageAtt)
+	attribute = node->FindAttribute("age");
+	if (attribute)
 	{
-		setAge(ageAtt->IntValue());
+		mAge = attribute->IntValue();
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* genderAtt = node->FindAttribute("gender");
-	if (genderAtt)
+	attribute = node->FindAttribute("gender");
+	if (attribute)
 	{
-		auto state = ESS->getStateByTag<eGender>(genderAtt->Value());
-		setGender(state);
+		mGender = ESS->getStateByTag<eGender>(attribute->Value());
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* socialAtt = node->FindAttribute("social");
-	if (socialAtt)
+	attribute = node->FindAttribute("social");
+	if (attribute)
 	{
-		setSociability(socialAtt->IntValue());
+		mSociability = attribute->IntValue();
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* neatnessAtt = node->FindAttribute("neatness");
-	if (neatnessAtt)
+	attribute = node->FindAttribute("neatness");
+	if (attribute)
 	{
-		setNeatness(neatnessAtt->IntValue());
+		mNeatness = attribute->IntValue();
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* societyClasslAtt = node->FindAttribute("society_class");
-	if (societyClasslAtt)
+	attribute = node->FindAttribute("society_class");
+	if (attribute)
 	{
-		auto state = ESS->getStateByTag<eSocietyClass>(societyClasslAtt->Value());
-		setSocietyClass(state);
+		mSocietyClass = ESS->getStateByTag<eSocietyClass>(attribute->Value());
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* factionAtt = node->FindAttribute("faction");
-	if (factionAtt)
+	attribute = node->FindAttribute("faction");
+	if (attribute)
 	{
-		setFaction(tFactionID(factionAtt->UnsignedValue()));
+		mFactionID = tFactionID(attribute->UnsignedValue());
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* main_taskAtt = node->FindAttribute("main_task");
-	if (main_taskAtt)
+	attribute = node->FindAttribute("main_task");
+	if (attribute)
 	{
-		auto state = ESS->getStateByTag<eMainTask>(main_taskAtt->Value());
-		setMainTask(state);
+		mMainTask = ESS->getStateByTag<eMainTask>(attribute->Value());
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* moment_taskAtt = node->FindAttribute("moment_task");
-	if (moment_taskAtt)
+	attribute = node->FindAttribute("moment_task");
+	if (attribute)
 	{
-		auto state = ESS->getStateByTag<eMomentTask>(moment_taskAtt->Value());
-		setMomentTask(state);
+		mMomentTask = ESS->getStateByTag<eMomentTask>(attribute->Value());
 	}
 	//---------------------------
-	const tinyxml2::XMLAttribute* statusAtt = node->FindAttribute("status");
-	if (statusAtt)
+	attribute = node->FindAttribute("status");
+	if (attribute)
 	{
-		auto state = ESS->getStateByTag<eStatus>(statusAtt->Value());
-		setStatus(state);
+		mStatus = ESS->getStateByTag<eStatus>(attribute->Value());
 	}
 	//---------------------------
-	//p_fatigue = "pf1"
-	const tinyxml2::XMLAttribute* p_fatigueAtt = node->FindAttribute("p_fatigue");
-	if (p_fatigueAtt)
+	attribute = node->FindAttribute("p_fatigue");
+	if (attribute)
 	{
-		//TODO
+		mPhysicalFatigue = ESS->getStateByTag<ePhysicalFatigue>(attribute->Value());
 	}
 	//---------------------------
-	//m_fatigue = "mf1"
-	const tinyxml2::XMLAttribute* m_fatigueAtt = node->FindAttribute("m_fatigue");
-	if (m_fatigueAtt)
+	attribute = node->FindAttribute("m_fatigue");
+	if (attribute)
 	{
-		//TODO
+		mMentalFatigue = ESS->getStateByTag<eMentalFatigue>(attribute->Value());
 	}
 	//---------------------------
-	//mood = "m1"
-	const tinyxml2::XMLAttribute* moodAtt = node->FindAttribute("mood");
-	if (moodAtt)
+	attribute = node->FindAttribute("mood");
+	if (attribute)
 	{
-		//TODO
+		mMood = ESS->getStateByTag<eMood>(attribute->Value());
 	}
 	//---------------------------
 	const tinyxml2::XMLElement* att_p_Node = node->FirstChildElement("attrib_p");

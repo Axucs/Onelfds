@@ -8,16 +8,12 @@
 #include <string>
 #include <map>
 #include <list>
+#include <tinyxml2.h>
 #include "CAttrib.h"	//классы атрибутов
 #include "CChar.h"		//классы тем и черт характера
 #include "CharEnums.h"
 #include "Factions.h"
 #include "explicitIntegralID.h"
-
-namespace tinyxml2
-{
-	class XMLElement; // это сделано что бы не делать #include <tinyxml2.h> сюда.
-};
 
 //----------------------------------------------------------
 using tCharID = ExplicitIntegralID<uint32_t, class CharIDTag>;
@@ -58,24 +54,10 @@ private:
 	//std::map<AreaId,int>				mRSs;
 public:
 	Character();
-	void setId(tCharID id);
-	void setName(const char* x);
-	void setAge(const int x);
-	void setGender(const eGender x);
-	void setRace(const eRace x);
-	void setSociability(const tSociability x);
-	void setNeatness(const tNeatness x);
-	void setSocietyClass(const eSocietyClass x);
-	void setFaction(const tFactionID id);
 	void setWorldView(const eWorldView type, const tWorldViewPos pos);
-	void setMainTask(const eMainTask x);
-	void setMomentTask(const eMomentTask x);
-	void setStatus(const eStatus x);
 	void setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
-	void setPF(ePhysicalFatigue x);
-	void setMF(eMentalFatigue x);
 	void setThems(eThems n, Them* x);
 
 	bool SerializeFromXML(const tinyxml2::XMLElement* node);

@@ -5,12 +5,9 @@
 #pragma once
 
 #include <list>
+#include <tinyxml2.h>
 
 class Character;
-namespace tinyxml2
-{
-	class XMLElement;
-};
 
 //----------------------------------------------------------
 enum class AreaId

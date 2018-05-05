@@ -3,7 +3,6 @@
 //----------------------------------------------------------
 
 #include <stdio.h>
-#include <tinyxml2.h>
 #include "XMLs.h"
 #include "World.h"
 #include "Character.h"

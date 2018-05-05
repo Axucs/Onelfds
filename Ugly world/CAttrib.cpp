@@ -4,7 +4,6 @@
 
 #include <string>
 #include <stdarg.h>
-#include <tinyxml2.h>
 #include "CAttrib.h"
 
 //----------------------------------------------------------

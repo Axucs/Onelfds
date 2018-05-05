@@ -5,13 +5,9 @@
 #pragma once
 
 #include <cstdint> // uint32_t
+#include <tinyxml2.h>
 #include "Singleton.h"
 #include "explicitIntegralID.h"
-
-namespace tinyxml2
-{
-	class XMLElement; // это сделано что бы не делать #include <tinyxml2.h> сюда.
-};
 
 //----------------------------------------------------------
 using tFactionID = ExplicitIntegralID<uint32_t, class FactionIDTag>;
