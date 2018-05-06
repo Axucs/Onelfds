@@ -147,7 +147,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	{
 		if (!mAttribP.SerializeFromXML(att_p_Node))
 		{
-			printf("ERROR: Problems in attrin_p");
+			Con::Log(LOG_ERROR, "Problems in attrib_p");
 		}
 	}
 	//---------------------------
@@ -156,7 +156,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	{
 		if (!mAttribPM.SerializeFromXML(att_pm_Node))
 		{
-			printf("ERROR: Problems in attrin_pm");
+			Con::Log(LOG_ERROR, "Problems in attrib_pm");
 		}
 	}
 	//---------------------------
@@ -165,7 +165,7 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 	{
 		if (!mAttribM.SerializeFromXML(att_m_Node))
 		{
-			printf("ERROR: Problems in attrin_m");
+			Con::Log(LOG_ERROR, "Problems in attrib_m");
 		}
 	}
 	//---------------------------
@@ -197,6 +197,6 @@ bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 //----------------------------------------------------------
 void Character::Tick()
 {
-	//printf("Char\n");
+	//Con::Log(LOG_MESSAGE, "Char");
 };
 //----------------------------------------------------------

@@ -9,7 +9,7 @@
 //----------------------------------------------------------
 Area::Area(AreaId id)
 {
-	ID = id;
+	mID = id;
 }
 //----------------------------------------------------------
 bool Area::SerializeFromXML(const tinyxml2::XMLElement* node)
@@ -20,7 +20,7 @@ bool Area::SerializeFromXML(const tinyxml2::XMLElement* node)
 //----------------------------------------------------------
 void Area::Tick()
 {
-	//printf("Area %u\n",ID);
+	//Con::Log(LOG_MESSAGE, "Area %u", mID);
 };
 //----------------------------------------------------------
 World::World() : Areas(), Characters()

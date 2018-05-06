@@ -2,11 +2,11 @@
 // заголовок тут (c)
 //----------------------------------------------------------
 
-#include <stdio.h>
 #include <Windows.h>
 #include "World.h"
 #include "XMLs.h"
 #include "character/EnumState.h"
+#include "console/Console.h"
 
 //----------------------------------------------------------
 void main()
@@ -15,25 +15,25 @@ void main()
 
 	if (!XML::LoadFactions("factions.xml"))
 	{
-		printf("ERROR: Can't load factions\n");
+		Con::Log(LOG_FATAL, "Can't load factions");
 		return;
 	}
 	World* world1 = XML::LoadWorld("world.xml");
 	if (!world1)
 	{
-		printf("ERROR: Can't load world\n");
+		Con::Log(LOG_FATAL, "Can't load world");
 		return;
 	}
 	if (!XML::LoadCharacters("characters.xml", world1))
 	{
-		printf("ERROR: Can't load chars\n");
+		Con::Log(LOG_FATAL, "Can't load characters");
 		return;
 	}
 
 	for (int n = 0;; n++)
 	{
 		Sleep(1000);
-		printf("Tick number %u\n", n);
+		Con::Log(LOG_MESSAGE, "Tick number %u", n);
 		world1->Tick();
 	}
 }

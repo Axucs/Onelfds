@@ -33,7 +33,7 @@ enum class AreaId
 class Area
 {
 private:
-	AreaId ID;
+	AreaId mID;
 public:
 	Area(AreaId id);
 	bool SerializeFromXML(const tinyxml2::XMLElement* node);

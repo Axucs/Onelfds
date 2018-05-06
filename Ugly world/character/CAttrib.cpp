@@ -5,6 +5,7 @@
 #include <string>
 #include <stdarg.h>
 #include "CAttrib.h"
+#include "../console/Console.h"
 
 //----------------------------------------------------------
 tMAttrib::tMAttrib(int n, eAttrib t, ...)
@@ -31,7 +32,7 @@ bool tMAttrib::setValue(const eAttrib type, value_type value)
 			return true;
 		}
 	}
-	printf("ERROR: bad attribute type");
+	Con::Log(LOG_ERROR, "Bad attribute type");
 	return false;
 }
 //----------------------------------------------------------
