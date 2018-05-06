@@ -125,24 +125,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CAttrib.h" />
-    <ClInclude Include="CChar.h" />
-    <ClInclude Include="Character.h" />
-    <ClInclude Include="CharEnums.h" />
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="EnumState.h" />
+    <ClInclude Include="character\CAttrib.h" />
+    <ClInclude Include="character\CChar.h" />
+    <ClInclude Include="character\Character.h" />
+    <ClInclude Include="character\CharEnums.h" />
+    <ClInclude Include="character\EnumState.h" />
+    <ClInclude Include="console\Console.h" />
     <ClInclude Include="Factions.h" />
-    <ClInclude Include="explicitIntegralID.h" />
-    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="util\explicitIntegralID.h" />
+    <ClInclude Include="util\Singleton.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="XMLs.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CAttrib.cpp" />
-    <ClCompile Include="Char1.cpp" />
-    <ClCompile Include="Character.cpp" />
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="EnumState.cpp" />
+    <ClCompile Include="character\CAttrib.cpp" />
+    <ClCompile Include="character\Char1.cpp" />
+    <ClCompile Include="character\Character.cpp" />
+    <ClCompile Include="character\EnumState.cpp" />
+    <ClCompile Include="console\Console.cpp" />
     <ClCompile Include="Factions.cpp" />
     <ClCompile Include="XMLs.cpp" />
     <ClCompile Include="main.cpp" />

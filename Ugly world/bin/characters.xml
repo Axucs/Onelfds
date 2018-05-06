@@ -15,92 +15,72 @@
     ></world_view>
     <aptitude></aptitude>
     <knowledges>
-      <knowledge type="Politics"      м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Fauna"         м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="History"       м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Architecture"  м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Handicraft"    м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Medicine"      м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Theology"      м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Weather"       м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Society"       м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Warfare"       м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Economy"       м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Flora"         м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Entertainment" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Culture"       м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Law"           м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Family"        м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="Rumors"        м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <knowledge type="News"          м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Politics"      rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Fauna"         rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="History"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Architecture"  rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Handicraft"    rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Medicine"      rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Theology"      rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Weather"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Society"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Warfare"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Economy"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Flora"         rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Entertainment" rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Culture"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Law"           rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Family"        rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="Rumors"        rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
+      <knowledge type="News"          rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
     </knowledges>
-    <thems>
-      <them type="Politics"      rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Fauna"         rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="History"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Architecture"  rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Handicraft"    rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Medicine"      rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Theology"      rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Weather"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Society"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Warfare"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Economy"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Flora"         rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Entertainment" rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Culture"       rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Law"           rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Family"        rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="Rumors"        rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-      <them type="News"          rs="3" м1="0" m2="0" m3="0" m4="0" m5="0" m6="0" m7="0" m8="0" m9="0" />
-    </thems>
     <traits>
-      <trait type="Honest"			          gro="4" inf="0" sta="none" />
-      <trait type="Deceptive"             gro="4" inf="0" sta="none" />
-      <trait type="Generous"		          gro="4" inf="0" sta="none" />
-      <trait type="Greedy"		            gro="4" inf="0" sta="none" />
-      <trait type="Lonely"			          gro="4" inf="0" sta="none" />
-      <trait type="Sociable"		          gro="4" inf="0" sta="none" />
-      <trait type="Gambler"		            gro="4" inf="0" sta="none" />
-      <trait type="Cold_blooded"	        gro="4" inf="0" sta="none" />
-      <trait type="Responsible"	          gro="4" inf="0" sta="none" />
-      <trait type="Irresponsible"	        gro="4" inf="0" sta="none" />
-      <trait type="Attentive"             gro="4" inf="0" sta="none" />
-      <trait type="Absentminded"	        gro="4" inf="0" sta="none" />
-      <trait type="Careful"               gro="4" inf="0" sta="none" />
-      <trait type="Sloppy"		            gro="4" inf="0" sta="none" />
-      <trait type="Delicate"		          gro="4" inf="0" sta="none" />
-      <trait type="Rough"	                gro="4" inf="0" sta="none" />
-      <trait type="Conceited"             gro="4" inf="0" sta="none" />
-      <trait type="Self_sufficient"       gro="4" inf="0" sta="none" />
-      <trait type="Rasper"		            gro="4" inf="0" sta="none" />
-      <trait type="Flexible"		          gro="4" inf="0" sta="none" />
-      <trait type="Farsighted"	          gro="4" inf="0" sta="none" />
-      <trait type="Myopic"			          gro="4" inf="0" sta="none" />
-      <trait type="Endurant"	            gro="4" inf="0" sta="none" />
-      <trait type="Individualist"         gro="4" inf="0" sta="none" />
-      <trait type="Collectivist"	        gro="4" inf="0" sta="none" />
-      <trait type="Cynical"               gro="4" inf="0" sta="none" />
-      <trait type="Sentimental"           gro="4" inf="0" sta="none" />
-      <trait type="Cunning"               gro="4" inf="0" sta="none" />
-      <trait type="Guileless"             gro="4" inf="0" sta="none" />
-      <trait type="Calm"	                gro="4" inf="0" sta="none" />
-      <trait type="Dynamic"	              gro="4" inf="0" sta="none" />
-      <trait type="Ambitious"		          gro="4" inf="0" sta="none" />
-      <trait type="Frivolous"             gro="4" inf="0" sta="none" />
-      <trait type="Unpredictable"         gro="4" inf="0" sta="none" />
-      <trait type="Stable"		            gro="4" inf="0" sta="none" />
-      <trait type="Unstable"		          gro="4" inf="0" sta="none" />
-      <trait type="Proud"			            gro="4" inf="0" sta="none" />
-      <trait type="Humble"	              gro="4" inf="0" sta="none" />
-      <trait type="Demanding"		          gro="4" inf="0" sta="none" />
-      <trait type="Witty"	                gro="4" inf="0" sta="none" />
-      <trait type="Melancholy"		        gro="4" inf="0" sta="none" />
-      <trait type="Dedicated"		          gro="4" inf="0" sta="none" />
-      <trait type="Independent"	          gro="4" inf="0" sta="none" />
-      <trait type="Opinionated"	          gro="4" inf="0" sta="none" />
-      <trait type="Diplomatic"		        gro="4" inf="0" sta="none" />
-      <trait type="Conflicting"    	      gro="4" inf="0" sta="none" />
+      <trait type="Honest"			          growth="4" influence="0" status="none" />
+      <trait type="Deceptive"             growth="4" influence="0" status="none" />
+      <trait type="Generous"		          growth="4" influence="0" status="none" />
+      <trait type="Greedy"		            growth="4" influence="0" status="none" />
+      <trait type="Lonely"			          growth="4" influence="0" status="none" />
+      <trait type="Sociable"		          growth="4" influence="0" status="none" />
+      <trait type="Gambler"		            growth="4" influence="0" status="none" />
+      <trait type="ColdBlooded"	          growth="4" influence="0" status="none" />
+      <trait type="Responsible"	          growth="4" influence="0" status="none" />
+      <trait type="Irresponsible"	        growth="4" influence="0" status="none" />
+      <trait type="Attentive"             growth="4" influence="0" status="none" />
+      <trait type="Absentminded"	        growth="4" influence="0" status="none" />
+      <trait type="Careful"               growth="4" influence="0" status="none" />
+      <trait type="Sloppy"		            growth="4" influence="0" status="none" />
+      <trait type="Delicate"		          growth="4" influence="0" status="none" />
+      <trait type="Rough"	                growth="4" influence="0" status="none" />
+      <trait type="Conceited"             growth="4" influence="0" status="none" />
+      <trait type="SelfSufficient"        growth="4" influence="0" status="none" />
+      <trait type="Rasper"		            growth="4" influence="0" status="none" />
+      <trait type="Flexible"		          growth="4" influence="0" status="none" />
+      <trait type="Farsighted"	          growth="4" influence="0" status="none" />
+      <trait type="Myopic"			          growth="4" influence="0" status="none" />
+      <trait type="Endurant"	            growth="4" influence="0" status="none" />
+      <trait type="Individualist"         growth="4" influence="0" status="none" />
+      <trait type="Collectivist"	        growth="4" influence="0" status="none" />
+      <trait type="Cynical"               growth="4" influence="0" status="none" />
+      <trait type="Sentimental"           growth="4" influence="0" status="none" />
+      <trait type="Cunning"               growth="4" influence="0" status="none" />
+      <trait type="Guileless"             growth="4" influence="0" status="none" />
+      <trait type="Calm"	                growth="4" influence="0" status="none" />
+      <trait type="Dynamic"	              growth="4" influence="0" status="none" />
+      <trait type="Ambitious"		          growth="4" influence="0" status="none" />
+      <trait type="Frivolous"             growth="4" influence="0" status="none" />
+      <trait type="Unpredictable"         growth="4" influence="0" status="none" />
+      <trait type="Stable"		            growth="4" influence="0" status="none" />
+      <trait type="Unstable"		          growth="4" influence="0" status="none" />
+      <trait type="Proud"			            growth="4" influence="0" status="none" />
+      <trait type="Humble"	              growth="4" influence="0" status="none" />
+      <trait type="Demanding"		          growth="4" influence="0" status="none" />
+      <trait type="Witty"	                growth="4" influence="0" status="none" />
+      <trait type="Melancholy"		        growth="4" influence="0" status="none" />
+      <trait type="Dedicated"		          growth="4" influence="0" status="none" />
+      <trait type="Independent"	          growth="4" influence="0" status="none" />
+      <trait type="Opinionated"	          growth="4" influence="0" status="none" />
+      <trait type="Diplomatic"		        growth="4" influence="0" status="none" />
+      <trait type="Conflicting"    	      growth="4" influence="0" status="none" />
     </traits>
   </character> 
   <character name="Anton" id="2" />

@@ -6,8 +6,8 @@
 
 #include <cstdint> // uint32_t
 #include <tinyxml2.h>
-#include "Singleton.h"
-#include "explicitIntegralID.h"
+#include "util/Singleton.h"
+#include "util/explicitIntegralID.h"
 
 //----------------------------------------------------------
 using tFactionID = ExplicitIntegralID<uint32_t, class FactionIDTag>;

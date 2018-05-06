@@ -50,11 +50,6 @@ void Character::setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, u
 	mAttribM[3] = x3;
 }
 //----------------------------------------------------------
-void Character::setThems(eThems n, Them* x)
-{
-	mThems.insert(std::make_pair(n, x));
-}
-//----------------------------------------------------------
 bool Character::SerializeFromXML(const tinyxml2::XMLElement* node)
 {
 	const tinyxml2::XMLAttribute* attribute = node->FindAttribute("id");

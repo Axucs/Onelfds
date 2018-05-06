@@ -12,8 +12,8 @@
 #include "CAttrib.h"	//классы атрибутов
 #include "CChar.h"		//классы тем и черт характера
 #include "CharEnums.h"
-#include "Factions.h"
-#include "explicitIntegralID.h"
+#include "../Factions.h"
+#include "../util/explicitIntegralID.h"
 
 //----------------------------------------------------------
 using tCharID = ExplicitIntegralID<uint32_t, class CharIDTag>;
@@ -47,9 +47,8 @@ private:
 	std::list<tCharID>					mKinList;
 	std::map<Skills,int>				mSkills;
 	std::map<eWorldView, tWorldViewPos>	mWorldView;
-	std::map<eThems,Them*>				mThems;
-	std::map<eTraits,Trait*>			mTraits;
-	//Knowledge							mKnowledge;
+	std::map<eKnowledges, tKnowledge>	mKnowledges;
+	std::map<eTraits,tTrait>			mTraits;
 	//Aptitude							mAptitude;
 	//std::map<AreaId,int>				mRSs;
 public:
@@ -58,7 +57,6 @@ public:
 	void setAttrib_P(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_PM(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
 	void setAttrib_M(unsigned int x0, unsigned int x1, unsigned int x2, unsigned int x3);
-	void setThems(eThems n, Them* x);
 
 	bool SerializeFromXML(const tinyxml2::XMLElement* node);
 	void Tick();

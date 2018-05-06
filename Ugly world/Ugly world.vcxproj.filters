@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Factions.cpp" />
+    <ClCompile Include="XMLs.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="console\Console.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="character\CAttrib.cpp">
+      <Filter>character</Filter>
+    </ClCompile>
+    <ClCompile Include="character\Char1.cpp">
+      <Filter>character</Filter>
+    </ClCompile>
+    <ClCompile Include="character\Character.cpp">
+      <Filter>character</Filter>
+    </ClCompile>
+    <ClCompile Include="character\EnumState.cpp">
+      <Filter>character</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Factions.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="XMLs.h" />
+    <ClInclude Include="console\Console.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="util\explicitIntegralID.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Singleton.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="character\CAttrib.h">
+      <Filter>character</Filter>
+    </ClInclude>
+    <ClInclude Include="character\CChar.h">
+      <Filter>character</Filter>
+    </ClInclude>
+    <ClInclude Include="character\Character.h">
+      <Filter>character</Filter>
+    </ClInclude>
+    <ClInclude Include="character\CharEnums.h">
+      <Filter>character</Filter>
+    </ClInclude>
+    <ClInclude Include="character\EnumState.h">
+      <Filter>character</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="bin\characters.xml" />
+    <Xml Include="bin\factions.xml" />
+    <Xml Include="bin\world.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="console">
+      <UniqueIdentifier>{6151251a-9bd9-4182-af71-14a2b3ec83f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{d0194d4e-dee5-488a-9485-a3d4ac6541a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="character">
+      <UniqueIdentifier>{f3bdb09e-cc65-4b32-a419-8bd5bedc85d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

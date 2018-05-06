@@ -108,7 +108,7 @@ enum class eWorldView
 	simp_exp	//self_improvement-exploitation
 };
 //----------------------------------------------------------
-enum class eThems
+enum class eKnowledges
 {
 	Politics,			//политика
 	Fauna,				//фауна

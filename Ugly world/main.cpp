@@ -6,7 +6,7 @@
 #include <Windows.h>
 #include "World.h"
 #include "XMLs.h"
-#include "EnumState.h"
+#include "character/EnumState.h"
 
 //----------------------------------------------------------
 void main()

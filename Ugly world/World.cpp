@@ -3,7 +3,7 @@
 //----------------------------------------------------------
 
 #include "World.h"
-#include "Character.h"
+#include "character/Character.h"
 #include "Factions.h"
 
 //----------------------------------------------------------

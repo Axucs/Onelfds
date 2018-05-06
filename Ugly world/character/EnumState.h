@@ -4,13 +4,13 @@
 
 #pragma once
 
-#include "Singleton.h"
+#include "../util/Singleton.h"
 #include <memory> // std::unique_ptr
 #include <functional> // std::function
 #include <algorithm> // std::for_each
 #include <unordered_map>
 #include <string>
-#include "Console.h" // AsertError
+#include "../console/Console.h" // AsertError
 
 //----------------------------------------------------------
 class cEnumStateBase
